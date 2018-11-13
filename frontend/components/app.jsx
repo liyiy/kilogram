@@ -17,8 +17,8 @@ const App = () => {
     <Greeting />
     </header>
 
-    <Rout path="/login" component={LoginFormContainer} />
-    <Route path="/signup" component={SignupFormContainer} />
+    <Route path="/login" component={LoginFormContainer} />
+    <Route path="/signup" component={SignUpFormContainer} />
     </div>
   );
 };

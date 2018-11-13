@@ -19,12 +19,25 @@ class SessionForm extends React.Component {
     this.setState({[field]: e.target.value})
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     return (
-      <div>
+      <div className="login-form-container">
         <h1>{this.props.formType}</h1>
-        <form onSubmit={this.handleSubmit}>
-          {this.props.formType}
+        <form onSubmit={this.handleSubmit} className="login-form-box">
+          Kilogram
+          <br/>
           <input type="text"
             value={this.state.username}
             onChange={this.update('username')}
@@ -33,7 +46,9 @@ class SessionForm extends React.Component {
             value={this.state.password}
             onChange={this.update('password')}
           />
-        <input type="submit"></input>
+          <input type="submit" value={this.props.formType}
+          />
+          {this.props.navLink}
         </form>
       </div>
     );

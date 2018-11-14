@@ -1,32 +1,32 @@
 .session-img {
   position: relative;
+  height: 0px;
   left: 230px;
-  bottom: 375px;
+  bottom: 425px;
   width: 0px;
 }
 
-.phone-slideshow #one {
+.phone-slideshow{
+  display: none;
+}
+
+ #one {
   position: relative;
   bottom: 897px;
   left: 381px;
   transition-delay: 5s;
 }
 
-/* #two {
+#two {
   position: relative;
   bottom: 897px;
   left: 141px;
-
+  opacity: 0;
 }
 
 #three {
   position: relative;
   bottom: 897px;
   right: 99px;
-
-} */
-
-/* #four {
-  position: relative;
-  bottom: 897px;
-} */
+  opacity: 0;
+}

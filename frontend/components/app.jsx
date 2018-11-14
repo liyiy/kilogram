@@ -5,6 +5,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+import { AuthRoute } from '../util/route_util';
 
 import Greeting from './greeting/greeting';
 import SignUpFormContainer from './session_form/signup_form_container';
@@ -15,9 +16,9 @@ const App = () => {
     <header>
     <h1>k i l o g r a m</h1>
     </header>
+    <AuthRoute exact path="/login" component={LoginFormContainer} />
+    <AuthRoute exact path="/signup" component={SignUpFormContainer} />
     <Route exact path="/" component={LoginFormContainer} />
-    <Route path="/login" component={LoginFormContainer} />
-    <Route path="/signup" component={SignUpFormContainer} />
     </div>
   );
 };

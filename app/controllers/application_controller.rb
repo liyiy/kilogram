@@ -22,6 +22,6 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
-  #ensure logged in? 
+  #ensure logged in?
 
 end

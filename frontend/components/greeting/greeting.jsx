@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 const msp = (state) => {
   const currentUserId = state.session.id;
@@ -17,12 +17,16 @@ const mdp = (dispatch) => {
   };
 };
 
-const Greeting = ({ currentUser, loggedIn, logout }) => {
+const Greeting = ({ currentUser, loggedIn, logout, history }) => {
+  
+  const loggingout = () => {
+    return logout().then(history.push("/login"))
+  }
   if (loggedIn) {
     return (
       <div>
         <p>{currentUser.username}</p>
-        <button onClick={logout}>LOGOUT</button>
+        <button onClick={loggingout}>LOGOUT</button>
       </div>
     );
   } else {
@@ -33,4 +37,4 @@ const Greeting = ({ currentUser, loggedIn, logout }) => {
 };
 
 
-export default connect(msp, mdp)(Greeting);
+export default withRouter(connect(msp, mdp)(Greeting));

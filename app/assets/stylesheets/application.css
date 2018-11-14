@@ -45,10 +45,10 @@
    background-color: #fafafa;
    border: 1px solid #e6e6e6;
    border-radius: 1px;
-   color: #9f9999;
  }
 
  .login-form-box input[placeholder] {
+   /* color: #9f9999; */
    text-align: center;
  }
 

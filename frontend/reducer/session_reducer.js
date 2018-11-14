@@ -9,6 +9,7 @@ const sessionReducer = (state = defaultState, action) => {
     case RECEIVE_CURRENT_USER:
       return merge({}, { id: action.user.id });
     case LOGOUT_CURRENT_USER:
+      return defaultState;
     default:
       return state;
   }

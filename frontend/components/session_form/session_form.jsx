@@ -49,13 +49,13 @@ class SessionForm extends React.Component {
             placeholder="Password"
           />
         <br/>
-          <input class='button' type="submit" value={this.props.formType}
+          <input className='button' type="submit" value={this.props.formType}
           />
         <br/>
       </form>
       </div>
         <div className='alternate-form'>
-          <a>{this.props.navLink}</a>
+          {this.props.navLink}
         </div>
       </>
     );

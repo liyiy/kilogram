@@ -1,17 +1,25 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { login } from '../../actions/session_actions';
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {username: "", password: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.action(user);
+  }
+
+  handleDemo(e) {
+    e.preventDefault();
+    const demo = {username: 'demo', password: 'demopass'};
+    dispatch(login(demo));
   }
 
   update(field) {
@@ -52,6 +60,7 @@ class SessionForm extends React.Component {
           <input className='button' type="submit" value={this.props.formType}
           />
         <br/>
+        <button className="demo-btn" onClick={this.handleDemo}>Demo Log In</button>
       </form>
       </div>
         <div className='alternate-form'>

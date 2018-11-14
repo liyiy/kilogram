@@ -5,11 +5,6 @@ import Root from './components/root';
 import * as actions from './actions/session_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
-  const root = document.getElementById('root');
-<<<<<<< HEAD
-  ReactDOM.render(<h1>Hi:)</h1>, root);
-})
-=======
   let store;
   if (window.currentUser) {
     const preloadedState = {
@@ -28,4 +23,3 @@ document.addEventListener("DOMContentLoaded", () => {
   window.actions = actions;
   ReactDOM.render(<Root store={ store }/>, root);
 });
->>>>>>> user_auth

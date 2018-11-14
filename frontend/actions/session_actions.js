@@ -32,12 +32,6 @@ export const login = (user) => {
   };
 };
 
-// export const demoLogin = (user) => {
-//   return dispatch => {
-//
-// }
-// }
-
 export const signup = (user) => {
   return dispatch => {
     return SessionApiUtil.signup(user).then(user => {

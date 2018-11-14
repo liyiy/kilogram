@@ -14,7 +14,6 @@ const App = () => {
     <div>
     <header>
     <h1>k i l o g r a m</h1>
-    <Greeting />
     </header>
 
     <Route path="/login" component={LoginFormContainer} />

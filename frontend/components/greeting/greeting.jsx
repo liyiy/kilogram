@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
+
 const msp = (state) => {
   const currentUserId = state.session.id;
   return {

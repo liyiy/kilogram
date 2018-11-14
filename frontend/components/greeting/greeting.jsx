@@ -21,16 +21,13 @@ const Greeting = ({ currentUser, loggedIn, logout }) => {
   if (loggedIn) {
     return (
       <div>
-        <p>{props.currentUser.username}</p>
+        <p>{currentUser.username}</p>
         <button onClick={logout}>LOGOUT</button>
       </div>
     );
   } else {
     return (
-      <div>
-        <Link to='/login'>Log In</Link>
-        <Link to ='/signup'>Sign Up</Link>
-      </div>
+      null
     );
   }
 };

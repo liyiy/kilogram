@@ -60,7 +60,7 @@ class SessionForm extends React.Component {
           <input className='button' type="submit" value={this.props.formType}
           />
         <br/>
-        <button onClick={this.handleDemo}>Demo</button>
+        <button className="demo-btn" onClick={this.handleDemo}>Demo Log In</button>
       </form>
       </div>
         <div className='alternate-form'>

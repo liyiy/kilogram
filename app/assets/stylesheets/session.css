@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'billabong';
+    src: url(./fonts/Billabong.ttf);
+}
+
+.login-form-container h2 {
+  font-family: 'billabong';
+  font-size: 60px;
+  margin: 20px;
+}
+
+.login-form-box {
+  position: relative;
+  left: 675px;
+  top: 50px;
+  border: 1px solid #e6e6e6;
+  height: 300px;
+  width: 350px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.login-form-box input {
+  height: 20px;
+  width: 250px;
+  margin-bottom: 7px;
+  background-color: #fafafa;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px;
+}
+
+.login-form-box input[placeholder] {
+  /* color: #9f9999; */
+  text-align: center;
+}
+
+.login-form-box .button {
+  height: 25px;
+  width: 255px;
+  background-color: #c4dffd;
+  color: #f6fbfe;
+  font-weight: 600;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+.login-form-box .button:hover {
+  background-color: #3897f0;
+  cursor: pointer;
+}
+
+.login-form-box .button value {
+  padding: 5px 0px 10px 0px;
+}
+
+.demo-btn {
+  height: 25px;
+  width: 255px;
+  background-color: #c4dffd;
+  color: #f6fbfe;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.demo-btn:hover {
+  background-color: #3897f0;
+  cursor: pointer;
+}
+
+.alternate-form {
+  position: relative;
+  left: 675px;
+  top: 45px;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  width: 310px;
+  margin-top: 10px;
+  padding: 20px;
+  margin-bottom: 10px;
+  font-size: 17px;
+  background-color: #ffffff;
+}
+
+.alternate-form a {
+  text-decoration: none;
+  color: #262626;
+}
+
+.alternate-form a:hover {
+  color: #3897f0;
+}

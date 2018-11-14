@@ -1,0 +1,32 @@
+.session-img {
+  position: relative;
+  left: 230px;
+  bottom: 375px;
+  width: 0px;
+}
+
+.phone-slideshow #one {
+  position: relative;
+  bottom: 897px;
+  left: 381px;
+  transition-delay: 5s;
+}
+
+/* #two {
+  position: relative;
+  bottom: 897px;
+  left: 141px;
+
+}
+
+#three {
+  position: relative;
+  bottom: 897px;
+  right: 99px;
+
+} */
+
+/* #four {
+  position: relative;
+  bottom: 897px;
+} */

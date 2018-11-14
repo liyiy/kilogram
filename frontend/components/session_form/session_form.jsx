@@ -62,9 +62,18 @@ class SessionForm extends React.Component {
         <br/>
         <button className="demo-btn" onClick={this.handleDemo}>Demo Log In</button>
       </form>
+      {this.renderErrors()}
       </div>
         <div className='alternate-form'>
           {this.props.navLink}
+        </div>
+        <div className="session-img">
+        <img src="https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png"/>
+        </div>
+        <div className="phone-slideshow">
+          <img id="one" src="https://www.instagram.com/static/images/homepage/screenshot4.jpg/842fe5699220.jpg"/>
+          <img id="two" src="https://www.instagram.com/static/images/homepage/screenshot3.jpg/f0c687aa6ec2.jpg"/>
+          <img id="three" src="https://www.instagram.com/static/images/homepage/screenshot2.jpg/6f03eb85463c.jpg"/>
         </div>
       </>
     );

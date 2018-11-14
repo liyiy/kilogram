@@ -40,7 +40,7 @@
   background-color: #c4dffd;
   color: #f6fbfe;
   font-weight: 600;
-  border-radius: 3px;
+  border-radius: 5px;
   margin-top: 10px;
 }
 
@@ -59,7 +59,7 @@
   background-color: #c4dffd;
   color: #f6fbfe;
   font-weight: 600;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .demo-btn:hover {

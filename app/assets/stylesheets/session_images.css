@@ -1,32 +1,31 @@
 .session-img {
   position: relative;
-  height: 0px;
+  height: 247px;
+  width: 50px;
   left: 230px;
   bottom: 425px;
-  width: 0px;
 }
 
 .phone-slideshow{
-  display: none;
+  height: 0px;
 }
 
  #one {
   position: relative;
-  bottom: 897px;
+  bottom: 572px;
   left: 381px;
-  transition-delay: 5s;
 }
 
 #two {
   position: relative;
-  bottom: 897px;
+  bottom: 572px;
   left: 141px;
-  opacity: 0;
+  opacity: 80;
 }
 
 #three {
   position: relative;
-  bottom: 897px;
+  bottom: 572px;
   right: 99px;
-  opacity: 0;
+  opacity: 80;
 }

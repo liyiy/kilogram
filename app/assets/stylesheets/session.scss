@@ -1,14 +1,12 @@
-@font-face {
-    font-family: 'billabong';
-    src: url("Billabong.ttf");
-}
+
 .login-form-container {
   display: flex;
   justify-content: flex-end;
 }
 
 .login-form-container h2 {
-  font-family: 'billabong';
+  font-family: 'Grand Hotel', cursive;
+  font-weight: 200;
   font-size: 60px;
   margin: 20px;
 }

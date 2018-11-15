@@ -51,43 +51,40 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <>
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <h2>Kilogram</h2>
-          <input type="text"
-            value={this.state.username}
-            onChange={this.update('username')}
-            placeholder="Username"
-          />
-        <br/>
-          <input type="text"
-            value={this.state.password}
-            onChange={this.update('password')}
-            placeholder="Password"
-          />
-        <br/>
-          <input className='button' type="submit" value={this.props.formType}
-          />
-        <br/>
-        <button className="demo-btn" onClick={this.handleDemo}>Demo Log In</button>
-        <br/>
-        {this.updateErrors()}
-        {this.renderErrors()}
-      </form>
+        <div className="session-img-div">
+          <div className="session-img">
+            <img src="https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png"/>
+          </div>
+        </div>
+        <div className="login-form-box-div">
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            <h2>Kilogram</h2>
+            <input type="text"
+              value={this.state.username}
+              onChange={this.update('username')}
+              placeholder="Username"
+            />
+            <br/>
+            <input type="text"
+              value={this.state.password}
+              onChange={this.update('password')}
+              placeholder="Password"
+            />
+            <br/>
+            <input className='button' type="submit" value={this.props.formType}
+            />
+            <br/>
+            <button className="demo-btn" onClick={this.handleDemo}>Demo Log In</button>
+            <br/>
+            {this.updateErrors()}
+            {this.renderErrors()}
+          </form>
+          <div className='alternate-form'>
+            {this.props.navLink}
+          </div>
+        </div>
       </div>
-        <div className='alternate-form'>
-          {this.props.navLink}
-        </div>
-        <div className="session-img">
-        <img src="https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png"/>
-        </div>
-        <div className="phone-slideshow">
-          <img id="one" src="https://www.instagram.com/static/images/homepage/screenshot4.jpg/842fe5699220.jpg"/>
-          <img id="two" src="https://www.instagram.com/static/images/homepage/screenshot3.jpg/f0c687aa6ec2.jpg"/>
-          <img id="three" src="https://www.instagram.com/static/images/homepage/screenshot2.jpg/6f03eb85463c.jpg"/>
-        </div>
-      </>
     );
   }
 }

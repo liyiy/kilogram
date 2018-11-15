@@ -14,8 +14,10 @@
  *= require_self
  */
 
+#root {
+  margin: auto;
+}
  body {
+   display: flex;
    background-color: #fafafa
  }
-
- 

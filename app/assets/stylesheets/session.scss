@@ -1,6 +1,10 @@
 @font-face {
     font-family: 'billabong';
-    src: asset-path("fonts/Billabong.ttf");
+    src: url("Billabong.ttf");
+}
+.login-form-container {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .login-form-container h2 {
@@ -9,15 +13,18 @@
   margin: 20px;
 }
 
+.login-form-box-div {
+}
+
+.session-img-div {
+}
+
 .login-form-box {
-  position: relative;
-  left: 675px;
-  top: 80px;
   border: 1px solid #e6e6e6;
-  height: 370px;
-  width: 350px;
   background-color: #ffffff;
   text-align: center;
+  height: 350px;
+  margin-top: 30px;
 }
 
 .login-form-box input {
@@ -70,9 +77,6 @@
 }
 
 .alternate-form {
-  position: relative;
-  left: 675px;
-  top: 78px;
   text-align: center;
   border: 1px solid #e6e6e6;
   width: 310px;

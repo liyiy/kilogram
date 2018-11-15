@@ -54,7 +54,7 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <div className="session-img-div">
           <div className="session-img">
-            <img src="https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png"/>
+            <img src={window.img}/>
           </div>
         </div>
         <div className="login-form-box-div">
@@ -74,6 +74,8 @@ class SessionForm extends React.Component {
             <br/>
             <input className='button' type="submit" value={this.props.formType}
             />
+            <br/>
+            <div className="sfl1"></div><div className="or">OR</div><div className="sfl2"></div>
             <br/>
             <button className="demo-btn" onClick={this.handleDemo}>Demo Log In</button>
             <br/>

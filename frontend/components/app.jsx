@@ -13,9 +13,7 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 const App = () => {
   return (
-    <div>
-    <header>
-    </header>
+    <div className="big-div">
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignUpFormContainer} />
     <ProtectedRoute exact path="/" component={Greeting} />

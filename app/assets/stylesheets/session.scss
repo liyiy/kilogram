@@ -7,8 +7,9 @@
 .login-form-container h2 {
   font-family: 'Grand Hotel', cursive;
   font-weight: 200;
-  font-size: 60px;
+  font-size: 55px;
   margin: 20px;
+  margin-bottom: 14px;
 }
 
 .login-form-box-div {
@@ -22,21 +23,25 @@
   background-color: #ffffff;
   text-align: center;
   height: 350px;
-  margin-top: 30px;
+  margin-top: 45px;
 }
 
 .login-form-box input {
-  height: 30px;
+  height: 37px;
   width: 250px;
   margin-bottom: 5px;
   background-color: #fafafa;
   border: 1px solid #e6e6e6;
   border-radius: 2px;
+  padding-left: 9px;
+  box-sizing: border-box;
 }
 
 .login-form-box input[placeholder] {
   /* color: #9f9999; */
-  text-align: center;
+  text-align: left;
+  font-size: 12px;
+  color: rgb(153, 153, 153);
 }
 
 .login-form-box .button {
@@ -67,6 +72,9 @@
   font-size: 13px;
   font-weight: 500;
   border-radius: 5px;
+  position: relative;
+  top: -10px;
+  border: 1px solid #e6e6e6;
 }
 
 .demo-btn:hover {
@@ -78,21 +86,32 @@
   text-align: center;
   border: 1px solid #e6e6e6;
   width: 310px;
-  margin-top: 20px;
+  margin-top: 12px;
   padding: 20px;
   margin-bottom: 10px;
   font-size: 17px;
   background-color: #ffffff;
+  height: 25px;
+
 }
 
-.alternate-form a {
+.alternate-form div {
+  padding-top: 5px;
   text-decoration: none;
   color: #262626;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .2px;
+  font-size: 14px;
 }
 
-.alternate-form a:hover {
+.form-btn {
   color: #3897f0;
+  text-decoration: none;
 }
+
+// .alternate-form a:hover {
+//   color: #3897f0;
+// }
 
 .errors {
   position: relative;
@@ -101,4 +120,31 @@
     list-style: none;
     right: 10px;
     text-align: left;
+}
+
+.or {
+  color: #999;
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .5px;
+  font-weight: bold;
+}
+
+.sfl1 {
+  background-color: #efefef;
+  position: relative;
+  top: 8px;
+  left: 50px;
+  height: 1px;
+  width: 100px;
+}
+
+.sfl2 {
+  background-color: #efefef;
+  position: relative;
+  top: -8px;
+  left: 199px;
+  height: 1px;
+  width: 100px;
+
 }

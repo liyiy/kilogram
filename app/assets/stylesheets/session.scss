@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'billabong';
-    src: url(./fonts/Billabong.ttf);
+    src: asset-path("fonts/Billabong.ttf");
 }
 
 .login-form-container h2 {
@@ -93,6 +93,10 @@
 }
 
 .errors {
-  padding-top: 20px;
-  color: #ed4956;
+  position: relative;
+    padding-top: 5px;
+    color: #ed4956;
+    list-style: none;
+    right: 10px;
+    text-align: left;
 }

@@ -22,6 +22,10 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
-  #ensure logged in?
+  def ensure_logged_in
+    unless current_user
+      render json: { base: ['must be logged in'] }, status: 401
+    end
+  end
 
 end

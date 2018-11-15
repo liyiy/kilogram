@@ -24,21 +24,21 @@ export const receiveSessionErrors = (errors) => {
   };
 };
 
-export const login = (user) => {
-  return dispatch => {
-    return SessionApiUtil.login(user).then(user => {
-      dispatch(receiveCurrentUser(user));
-    });
-  };
-};
+export const login = user => dispatch => (
+  SessionApiUtil.login(user).then(user => (
+    dispatch(receiveCurrentUser(user))
+  ), err => (
+    dispatch(receiveSessionErrors(err.responseJSON))
+  ))
+);
 
-export const signup = (user) => {
-  return dispatch => {
-    return SessionApiUtil.signup(user).then(user => {
-      dispatch(receiveCurrentUser(user));
-    });
-  };
-};
+export const signup = user => dispatch => (
+  SessionApiUtil.signup(user).then(user => (
+    dispatch(receiveCurrentUser(user))
+  ), err => (
+    dispatch(receiveSessionErrors(err.responseJSON))
+  ))
+);
 
 export const logout = () => {
   return dispatch => {

@@ -40,6 +40,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    const error = this.props.error;
     return (
       <>
       <div className="login-form-container">
@@ -61,8 +62,11 @@ class SessionForm extends React.Component {
           />
         <br/>
         <button className="demo-btn" onClick={this.handleDemo}>Demo Log In</button>
+        <br/>
+        <div className="errors">
+        {this.props.errors[0]}
+        </div>
       </form>
-      {this.renderErrors()}
       </div>
         <div className='alternate-form'>
           {this.props.navLink}

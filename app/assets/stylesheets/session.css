@@ -91,3 +91,8 @@
 .alternate-form a:hover {
   color: #3897f0;
 }
+
+.errors {
+  padding-top: 20px;
+  color: #ed4956;
+}

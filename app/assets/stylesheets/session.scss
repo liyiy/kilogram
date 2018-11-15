@@ -22,7 +22,7 @@
   border: 1px solid #e6e6e6;
   background-color: #ffffff;
   text-align: center;
-  height: 350px;
+  height: 370px;
   margin-top: 45px;
 }
 
@@ -41,7 +41,6 @@
   /* color: #9f9999; */
   text-align: left;
   font-size: 12px;
-  color: rgb(153, 153, 153);
 }
 
 .login-form-box .button {
@@ -114,12 +113,15 @@
 // }
 
 .errors {
-  position: relative;
-    padding-top: 5px;
+    position: relative;
     color: #ed4956;
     list-style: none;
-    right: 10px;
-    text-align: left;
+    right: 20px;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+
+
 }
 
 .or {

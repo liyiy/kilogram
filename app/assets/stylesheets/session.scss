@@ -22,7 +22,7 @@
   border: 1px solid #e6e6e6;
   background-color: #ffffff;
   text-align: center;
-  height: 350px;
+  height: 370px;
   margin-top: 45px;
 }
 
@@ -114,12 +114,15 @@
 // }
 
 .errors {
-  position: relative;
-    padding-top: 5px;
+    position: relative;
     color: #ed4956;
     list-style: none;
-    right: 10px;
-    text-align: left;
+    right: 20px;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+
+
 }
 
 .or {

@@ -1,9 +1,0 @@
-.nav {
-  display: flex;
-  width: 70%;
-  border: 2px solid red;
-}
-
-.nav ul {
-  flex-direction: column;
-}

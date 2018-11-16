@@ -20,11 +20,16 @@ const mdp = (dispatch) => {
 const NavBar = () => {
   return (
     <div className="nav">
-      <ul>
-        <li>one</li>
-        <li>two</li>
-        <li>three</li>
-      </ul>
+      <Link className="left-nav-link" to="/">
+      <div className="left-nav">
+        <img src={window.instaLogo}></img>
+        <div></div>
+        <span className="left-nav-title">Kilogram</span>
+      </div>
+      </Link>
+      <div className="right-nav">
+        <img src={window.newPostLogo}></img>
+      </div>
     </div>
   )
 };

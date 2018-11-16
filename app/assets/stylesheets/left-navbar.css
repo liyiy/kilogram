@@ -1,0 +1,49 @@
+.nav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0;
+  height: 77px;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1;
+  border-bottom: 1px solid rgba(0,0,0,.0975);
+  overflow: hidden;
+}
+
+.left-nav-link {
+  position: absolute;
+  text-decoration: none;
+  color: black;
+}
+
+.left-nav {
+  display: flex;
+  padding-top: 19px;
+  padding-left: 100px;
+  text-decoration: none;
+}
+
+.left-nav div {
+  height: 26px;
+  width: 1px;
+  background-color: black;
+  margin-right: 16px;
+  margin-top: 7px;
+
+}
+
+.nav img {
+  height: 22px;
+  width: 22px;
+  padding-right: 18px;
+  padding-top: 9px;
+
+}
+
+.left-nav-title {
+  /* position: relative; */
+  padding-right: 10px;
+  font-family: 'Grand Hotel', cursive;
+  font-size: 30px;
+}

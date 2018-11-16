@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../actions/session_actions';
 import { Link, withRouter } from 'react-router-dom';
+import { openModal } from '../actions/modal_actions';
+
 
 const msp = (state) => {
   const currentUserId = state.session.id;
@@ -17,7 +19,10 @@ const mdp = (dispatch) => {
   };
 };
 
-const NavBar = () => {
+const NavBar = ({ currentUser, loggedIn, logout, history }) => {
+  const loggingout = () => {
+    return logout().then(history.push("/login"))
+  }
   return (
     <div className="nav">
       <Link className="left-nav-link" to="/">
@@ -28,7 +33,11 @@ const NavBar = () => {
       </div>
       </Link>
       <div className="right-nav">
-        <img src={window.newPostLogo}></img>
+        <button onClick={() => dispatch(openModal('createPost'))}>
+          New Post
+        </button>
+        <button onClick={loggingout}>LOGOUT</button>
+        <img onClick={() => dispatch(openModal('createPost'))} src={window.newPostLogo}></img>
       </div>
     </div>
   )

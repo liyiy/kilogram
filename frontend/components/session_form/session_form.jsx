@@ -8,8 +8,10 @@ class SessionForm extends React.Component {
     this.state = {username: "", password: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
-    this.updateErrors = this.updateErrors.bind(this);
-    this.errors = this.props.errors;
+  }
+
+  componentWillUnmount() {
+    this.props.removeErrors();
   }
 
   handleSubmit(e) {
@@ -24,14 +26,6 @@ class SessionForm extends React.Component {
     dispatch(login(demo));
   }
 
-  updateErrors() {
-    if (this.errors.length < 1) {
-      this.errors = this.props.errors;
-    } else {
-      this.errors = [];
-    }
-  }
-
   update(field) {
     return (e) =>
     this.setState({[field]: e.target.value})
@@ -40,7 +34,7 @@ class SessionForm extends React.Component {
   renderErrors() {
     return(
       <ul className="errors">
-        {this.errors.map((error, i) => (
+        {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
           </li>
@@ -48,7 +42,7 @@ class SessionForm extends React.Component {
       </ul>
     );
   }
-
+  
   render() {
     return (
       <div className="login-form-container">
@@ -79,7 +73,6 @@ class SessionForm extends React.Component {
             <br/>
             <button className="demo-btn" onClick={this.handleDemo}>Demo Log In</button>
             <br/>
-            {this.updateErrors()}
             {this.renderErrors()}
           </form>
           <div className='alternate-form'>

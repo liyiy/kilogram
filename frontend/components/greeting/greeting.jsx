@@ -18,15 +18,18 @@ const mdp = (dispatch) => {
 };
 
 const Greeting = ({ currentUser, loggedIn, logout, history }) => {
-  
+
   const loggingout = () => {
     return logout().then(history.push("/login"))
   }
   if (loggedIn) {
     return (
       <div>
+        <div className="nav">
         <p>{currentUser.username}</p>
+        <p>?????what</p>
         <button onClick={loggingout}>LOGOUT</button>
+        </div>
       </div>
     );
   } else {

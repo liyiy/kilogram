@@ -9,6 +9,7 @@ import {
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 import Greeting from './greeting/greeting';
+import NavBar from './navbar';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 const App = () => {
@@ -16,7 +17,7 @@ const App = () => {
     <div className="big-div">
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-    <ProtectedRoute exact path="/" component={Greeting} />
+    <ProtectedRoute exact path="/" component={NavBar} />
     </div>
   );
 };

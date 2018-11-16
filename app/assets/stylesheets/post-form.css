@@ -1,0 +1,78 @@
+.post-form-container {
+  border: 4px solid white;
+  display: flex;
+  height: 500px;
+  width: 400px;
+  border-radius: 20px;
+  background-color: #eac9c9;
+}
+
+.post-form-container a {
+  color: black;
+  font-size: 14px;
+}
+
+.post-form-header {
+  text-align: center;
+  font-family: 'Grand Hotel', cursive;
+  margin: 0;
+  color: black;
+  font-size: 40px;
+  padding-top: 0px;
+  letter-spacing: 2.5px;
+  padding-right: 90px;
+
+}
+
+.post-form-box {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  padding-left: 60px;
+}
+
+.close-x {
+  display: flex;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.close-x:hover {
+  cursor: pointer;
+}
+
+.post-form {
+  position: relative;
+  bottom: 30px;
+  height: 200px;
+  width: 350px;
+  margin-left: 7px;
+}
+
+.image-url {
+  width: 313px;
+  height: 30px;
+  font-size: 12px;
+}
+
+input[type="file"] {
+  padding-top: 17px;
+}
+
+.post-form-container textarea {
+  font-size: 12px;
+  border: 1px solid #e6e6e6;
+}
+
+.preview img {
+  max-height: 250px;
+  max-width: 250px;
+}
+
+
+.post-form-label {
+  color: black;
+  font-size: 15px;
+  margin-bottom: 5px;
+  padding-left: 2px;
+}

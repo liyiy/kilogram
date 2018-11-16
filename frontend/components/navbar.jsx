@@ -37,7 +37,9 @@ const NavBar = ({ currentUser, loggedIn, logout, history }) => {
           New Post
         </button>
         <button onClick={loggingout}>LOGOUT</button>
-        <img onClick={() => dispatch(openModal('createPost'))} src={window.newPostLogo}></img>
+        <img onClick={() => dispatch(openModal('createPost'))}
+             className="add-post-btn"
+            src={window.newPostLogo}></img>
       </div>
     </div>
   )

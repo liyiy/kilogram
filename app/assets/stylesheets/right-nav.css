@@ -3,3 +3,7 @@
   flex-direction: row-reverse;
   padding-top: 17px;
 }
+
+.add-post-btn:hover {
+  cursor: pointer;
+}

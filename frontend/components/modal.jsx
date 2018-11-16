@@ -13,7 +13,6 @@ function Modal({modal, closeModal}) {
   switch (modal) {
     case 'createPost':
       component = <PostFormContainer />;
-      debugger
       break;
     default:
       return null;

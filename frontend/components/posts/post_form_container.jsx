@@ -8,11 +8,6 @@ import PostForm from './post_form';
 const mdp = (dispatch) => {
   return {
     createPost: post => dispatch(createPost(post)),
-    otherForm: (
-      <button onClick={() => dispatch(openModal('createPost'))}>
-        New Post
-      </button>
-    ),
     closeModal: () => dispatch(closeModal())
   };
 };

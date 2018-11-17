@@ -71,7 +71,8 @@ class PostForm extends Component {
               onChange={this.update('description')}
             />
             <br/>
-            <input className="post-form-submit" type="submit" value="submit" />
+            <input onClick={this.props.closeModal}
+              className="post-form-submit" type="submit" value="submit" />
           </div>
         </form>
       </div>

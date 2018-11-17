@@ -23,21 +23,25 @@ const NavBar = ({ currentUser, loggedIn, logout, history }) => {
   const loggingout = () => {
     return logout().then(history.push("/login"))
   }
+
+  const profilePage = () => {
+    return history.push(`/users/${currentUser.id}`)
+  }
+
   return (
     <div className="nav">
       <Link className="left-nav-link" to="/">
       <div className="left-nav">
-        <img src={window.instaLogo}></img>
+        <img className="logo-icon" src={window.instaLogo}></img>
         <div></div>
         <span className="left-nav-title">Kilogram</span>
       </div>
       </Link>
       <div className="right-nav">
-
         <button onClick={loggingout}>LOGOUT</button>
-        <img onClick={() => dispatch(openModal('createPost'))}
-             className="add-post-btn"
-            src={window.newPostLogo}></img>
+        <img className="profile-icon" src={window.profileLogo}
+             onClick={profilePage}>
+        </img>
       </div>
     </div>
   )

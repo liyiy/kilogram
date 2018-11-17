@@ -1,11 +1,13 @@
 .profile-container {
   border: 2px solid red;
-  display: flex;
-  justify-content: space-between;
+  margin-top: 100px;
+  width: 400px;
+  height: 100px;
 }
 
 .profile-nav {
   border: 2px solid red;
+  display: flex;
 }
 
 .profile-user {
@@ -14,7 +16,26 @@
   font-weight: 300;
 }
 
+.profile-post-list {
+  display: flex;
+}
+
+.profile-post-list-img img {
+  max-width: 258px;
+  max-height: 258px;
+}
+
 .profile-post-index-item {
   list-style: none;
   border: 2px solid red;
+  height: 258px;
+  width: 258px;
+  padding-right: 30px;
+}
+
+
+.profile-post-list-img {
+  background-color: black;
+  max-width: 258px;
+  height: 258px;
 }

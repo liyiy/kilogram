@@ -1,5 +1,5 @@
 .nav {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   padding: 0;
@@ -33,7 +33,7 @@
 
 }
 
-.nav img {
+.logo-icon {
   height: 22px;
   width: 22px;
   padding-right: 18px;

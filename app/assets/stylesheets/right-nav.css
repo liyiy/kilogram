@@ -1,9 +1,19 @@
 .right-nav {
+  border: 2px solid red;
   display:flex;
   flex-direction: row-reverse;
   padding-top: 17px;
 }
 
 .add-post-btn:hover {
+  cursor: pointer;
+}
+
+.profile-icon {
+  height: 37px;
+  width: 37px;
+}
+
+.profile-icon:hover {
   cursor: pointer;
 }

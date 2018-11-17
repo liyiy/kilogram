@@ -11,7 +11,6 @@ const msp = (state) => {
       return post
     }
   });
-
   return {
     posts: userPosts
   };
@@ -30,16 +29,22 @@ class ProfilePostsContainer extends Component {
   }
 
   render() {
-
-    const posts = this.props.posts.map(post => {
+    let posts;
+    // if (this.props.posts[0] === undefined || this.props.posts.length < 1) {
+    //    posts = null
+    // } else {
+     posts = this.props.posts.map(post => {
+       if (post !== undefined) {
       return (
         <li key={post.id} className="profile-post-index-item">
-          <div>{post.description}
-          <img src={post.imageUrl}/>
-          </div>
+            <div className="profile-post-list-img">
+              <img src={post.imageUrl}/>
+            </div>
         </li>
       )
+    }
     });
+
     return (
       <main className="profile-post-index">
       <br/>
@@ -49,6 +54,7 @@ class ProfilePostsContainer extends Component {
       </main>
     );
   };
+
 }
 
 

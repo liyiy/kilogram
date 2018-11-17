@@ -28,13 +28,16 @@ const ProfileContainer = ({ currentUser, logout, history }) => {
     return (
       <div>
         <div className="profile-container">
+          <div className="profile-header">
           <div className="profile-nav">
-            <div className="profile-user">ConsciousBanana</div>
+            <div className="profile-user">{currentUser.username}</div>
             <button onClick={() => dispatch(openModal('createPost'))}>
               New Post
             </button>
+            <button onClick={loggingout}>LOGOUT</button>
             </div>
           <p>{currentUser.posts.length} posts</p>
+          </div>
         </div>
         <div className="profile-posts-container">
           <ProfilePostsContainer />

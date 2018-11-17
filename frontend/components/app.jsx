@@ -14,7 +14,7 @@ import NavBar from './navbar';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import PostIndex from './posts/post_index';
-import Profile from './profile/profile_container';
+import ProfileContainer from './profile/profile_container';
 
 
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
     <AuthRoute exact path="/signup" component={SignUpFormContainer} />
     <ProtectedRoute exact path="/" component={NavBar} />
     <Route exact path="/" component={PostIndex} />
-    <Route exact path="/users/:userId" component={Profile} />
+    <Route exact path="/users/:userUsername" component={ProfileContainer} />
     </div>
   );
 };

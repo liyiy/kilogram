@@ -1,3 +1,20 @@
 .profile-container {
   border: 2px solid red;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-nav {
+  border: 2px solid red;
+}
+
+.profile-user {
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.profile-post-index-item {
+  list-style: none;
+  border: 2px solid red;
 }

@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { fetchPosts } from '../../actions/post_actions';
+import { openModal } from '../../actions/modal_actions';
+import PostItem from '../posts/post_item';
 
 const msp = (state) => {
   const currentUser = state.session.id;
@@ -31,17 +33,27 @@ class ProfilePostsContainer extends Component {
   render() {
     let posts;
 
-     posts = this.props.posts.map((post, idx) => {
-       if (post !== undefined) {
-      return (
-        <li key={post.id} className="profile-post-index-item">
-            <div className="profile-post-list-img">
-              <img src={post.imageUrl}/>
-            </div>
-        </li>
-      )
-    }
-    });
+    //  posts = this.props.posts.map((post, idx) => {
+    //    if (post !== undefined) {
+    //   return (
+    //     <li key={post.id} className="profile-post-index-item">
+    //         <div className="profile-post-list-img">
+    //           <img onClick={() => dispatch(openModal('showPost'))} src={post.imageUrl} post={post.id}/>
+    //         </div>
+    //     </li>
+    //   )
+    // }
+    // });
+
+    posts = this.props.posts.map((post, idx) => {
+      if (post !== undefined) {
+       return (
+         <PostItem
+           key={post.id}
+           post={post} />
+         );
+       }
+       });
 
     return (
       <main className="profile-post-index">

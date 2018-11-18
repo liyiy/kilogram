@@ -1,9 +1,4 @@
 json.post do
   json.partial! '/api/posts/post', post: @post
-  
+  json.imageUrl url_for(@post.photo)
 end
-
-# json.array! @posts do |post|
-#   json.ex
-
-# json.photoUrls @post.photos.map { |file| url_for(file) }

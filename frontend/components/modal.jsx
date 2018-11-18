@@ -15,7 +15,7 @@ function Modal({modal, closeModal}) {
     case 'createPost':
       component = <PostFormContainer />;
       break;
-    case 'editPost':
+    case 'showPost':
       component = <PostShow />;
       break;
     default:

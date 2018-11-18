@@ -42,6 +42,7 @@
 
 .profile-post-list-img:hover {
   cursor: pointer;
+  -webkit-filter: brightness(70%);
 }
 
 .profile-post-index-item {

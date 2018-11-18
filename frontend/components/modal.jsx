@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import PostFormContainer from './posts/post_form_container';
+import PostShow from './posts/post_show';
 
 
 
@@ -13,6 +14,9 @@ function Modal({modal, closeModal}) {
   switch (modal) {
     case 'createPost':
       component = <PostFormContainer />;
+      break;
+    case 'editPost':
+      component = <PostShow />;
       break;
     default:
       return null;

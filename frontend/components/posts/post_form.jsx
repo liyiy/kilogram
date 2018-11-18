@@ -26,7 +26,7 @@ class PostForm extends Component {
       data: formData,
       contentType: false,
       processData: false
-    });
+    }).then(() => this.props.history.push('/'));
     // const post = Object.assign({}, this.state);
     // this.props.createPost(post).then(this.props.closeModal);
   }

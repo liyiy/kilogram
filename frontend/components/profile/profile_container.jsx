@@ -31,7 +31,7 @@ const ProfileContainer = ({ currentUser, logout, history }) => {
           <div className="profile-header">
           <div className="profile-nav">
             <div className="profile-user">{currentUser.username}</div>
-            <button onClick={() => dispatch(openModal('createPost'))}>
+            <button className="new-post-btn" onClick={() => dispatch(openModal('createPost'))}>
               New Post
             </button>
             <button onClick={loggingout}>LOGOUT</button>

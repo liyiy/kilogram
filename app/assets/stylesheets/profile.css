@@ -1,23 +1,38 @@
 .profile-container {
-  border: 2px solid red;
-  margin-top: 100px;
-  width: 400px;
-  height: 100px;
+
+  margin-top: 105px;
+  padding-left: 375px;
+  font-family: 'Roboto', sans-serif;
+  border-bottom: 1px solid #efefef;
+
+}
+.profile-header {
+  padding-bottom: 100px;
+}
+.profile-nav {
+  display: flex;
+  width: 365px;
+  font-family: 'Roboto', sans-serif;
+  justify-content: space-between;
 }
 
-.profile-nav {
-  border: 2px solid red;
+.profile-post-index {
   display: flex;
+  max-width: 940px;
+  margin-left: 48px;
+  padding-top: 80px;
 }
 
 .profile-user {
-  font-size: 25px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-size: 30px;
+  font-weight: lighter;
+  margin-bottom: 2px;
+
 }
 
 .profile-post-list {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .profile-post-list-img img {
@@ -25,17 +40,38 @@
   max-height: 258px;
 }
 
+.profile-post-list-img:hover {
+  cursor: pointer;
+}
+
 .profile-post-index-item {
   list-style: none;
-  border: 2px solid red;
   height: 258px;
   width: 258px;
   padding-right: 30px;
+  padding-bottom: 30px;
 }
 
-
 .profile-post-list-img {
-  background-color: black;
+  background-color: white;
   max-width: 258px;
   height: 258px;
+}
+
+.new-post-btn {
+  background-color: transparent;
+  border: 1px solid #dbdbdb;
+  color: #262626;
+  border-radius: 4px;
+  font-weight: 600;
+  padding: 5px 9px;
+  text-align: center;
+  font-size: 13px;
+  width: 84px;
+  height: 30px;
+  margin-left: 146px;
+}
+
+.new-post-btn:hover {
+  cursor: pointer;
 }

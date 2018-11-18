@@ -30,10 +30,8 @@ class ProfilePostsContainer extends Component {
 
   render() {
     let posts;
-    // if (this.props.posts[0] === undefined || this.props.posts.length < 1) {
-    //    posts = null
-    // } else {
-     posts = this.props.posts.map(post => {
+
+     posts = this.props.posts.map((post, idx) => {
        if (post !== undefined) {
       return (
         <li key={post.id} className="profile-post-index-item">
@@ -47,7 +45,6 @@ class ProfilePostsContainer extends Component {
 
     return (
       <main className="profile-post-index">
-      <br/>
         <ul className="profile-post-list">
           {posts}
         </ul>

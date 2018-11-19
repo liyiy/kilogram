@@ -1,41 +1,41 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchPost } from '../../actions/post_actions';
+import { deletePost } from '../../actions/post_actions';
+import { closeModal } from '../../actions/modal_actions';
 
-const msp = (state, ownProps) => {
-  const post = state.entities.posts[ownProps.match.params.postId]
-  debugger
+const mdp = (dispatch) => {
   return {
-    post
+    deletePost: (id) => dispatch(deletePost(id))
   };
 };
 
-const mdp = dispatch => {
-  return {
-    fetchPost: (id) => dispatch(fetchPost(id)),
-  };
-};
 
 class PostShow extends React.Component {
-
   constructor(props) {
     super(props);
-    debugger
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchPost(this.props.post.id)
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deletePost(this.props.post.id).then(dispatch(closeModal()));
   }
 
   render() {
     return(
       <div className="post-show">
-        is this working
-        <img src={this.props.post.imageUrl}/>
+        <img src={this.props.post.imageUrl} />
+        <div className="post-show-right">
+          <button className="delete-post-button" onClick={this.handleDelete}>
+            Delete Post
+          </button>
+        </div>
       </div>
     );
   }
-};
+}
 
-export default withRouter(connect(msp, mdp)(PostShow));
+
+
+export default withRouter(connect(null, mdp)(PostShow));

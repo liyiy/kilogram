@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { fetchPosts } from '../../actions/post_actions';
-import { openModal } from '../../actions/modal_actions';
+import { openPost } from '../../actions/modal_actions';
 import PostItem from '../posts/post_item';
 
 const msp = (state) => {
@@ -20,7 +20,8 @@ const msp = (state) => {
 
 const mdp = (dispatch) => {
   return {
-    fetchPosts: () => dispatch(fetchPosts())
+    fetchPosts: () => dispatch(fetchPosts()),
+    openPost: (modal, post) => dispatch(openPost(modal, post))
   };
 };
 
@@ -33,26 +34,14 @@ class ProfilePostsContainer extends Component {
   render() {
     let posts;
 
-    //  posts = this.props.posts.map((post, idx) => {
-    //    if (post !== undefined) {
-    //   return (
-    //     <li key={post.id} className="profile-post-index-item">
-    //         <div className="profile-post-list-img">
-    //           <img onClick={() => dispatch(openModal('showPost'))} src={post.imageUrl} post={post.id}/>
-    //         </div>
-    //     </li>
-    //   )
-    // }
-    // });
-
     posts = this.props.posts.map((post) => {
       if (post !== undefined) {
        return (
-         <Link key={post.id} to={`/posts/${post.id}`}>
            <PostItem
             key={post.id}
-            post={post} />
-         </Link>
+            post={post}
+            openPost={() => this.props.openPost('showPost', post)}
+            />
          );
        }
        });

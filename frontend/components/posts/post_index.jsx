@@ -29,7 +29,6 @@ class PostIndex extends Component {
   }
 
   render() {
-    debugger
     const posts = this.props.posts.map(post => {
       return (
         <li key={post.id} className="post-index-item">

@@ -1,0 +1,22 @@
+.post-show {
+  border: 2px solid red;
+}
+
+.post-show-right {
+  border: 2px solid red;
+  display: flex;
+  
+}
+
+.post-show img {
+  border: 2px solid green;
+  max-height: 600px;
+  max-width: 600px;
+}
+
+.delete-post-button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+
+}

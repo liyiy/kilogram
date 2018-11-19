@@ -7,7 +7,7 @@ import PostShow from './posts/post_show';
 
 
 
-function Modal({modal, closeModal}) {
+function Modal({modal, post, closeModal}) {
   if(!modal) {
     return null;
   }
@@ -17,12 +17,12 @@ function Modal({modal, closeModal}) {
       component = <PostFormContainer />;
       break;
     case 'showPost':
-      component = <PostShow />;
+      component = <PostShow post={post}/>;
       break;
     default:
       return null;
   }
-  
+
   return (
     <div className="modal-background" onClick={closeModal}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>
@@ -34,7 +34,8 @@ function Modal({modal, closeModal}) {
 
 const msp = state => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    post: state.ui.post
   };
 };
 

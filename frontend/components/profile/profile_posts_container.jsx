@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { fetchPosts } from '../../actions/post_actions';
 import { openModal } from '../../actions/modal_actions';
 import PostItem from '../posts/post_item';
@@ -45,12 +45,14 @@ class ProfilePostsContainer extends Component {
     // }
     // });
 
-    posts = this.props.posts.map((post, idx) => {
+    posts = this.props.posts.map((post) => {
       if (post !== undefined) {
        return (
-         <PostItem
-           key={post.id}
-           post={post} />
+         <Link key={post.id} to={`/posts/${post.id}`}>
+           <PostItem
+            key={post.id}
+            post={post} />
+         </Link>
          );
        }
        });

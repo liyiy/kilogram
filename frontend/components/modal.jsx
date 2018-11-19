@@ -1,6 +1,7 @@
 import React from 'react';
 import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
 import PostFormContainer from './posts/post_form_container';
 import PostShow from './posts/post_show';
 
@@ -21,7 +22,7 @@ function Modal({modal, closeModal}) {
     default:
       return null;
   }
-
+  
   return (
     <div className="modal-background" onClick={closeModal}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>

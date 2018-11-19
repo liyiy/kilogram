@@ -3,13 +3,19 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import { fetchPosts } from '../../actions/post_actions';
 import { fetchUsers } from '../../actions/user_actions';
+import { fetchComments } from '../../actions/comment_actions';
+import CommentForm from '../comments/comment_form';
+import PostIndexItem from './post_index_item';
 
 const msp = state => {
   const posts = Object.values(state.entities.posts);
   const users = (state.entities.users);
+  const currentUserId = state.session.currentUserId
+
   return {
     posts,
     users,
+    currentUserId,
     loggedIn: Boolean(state.session.currentUserId)
   };
 };
@@ -17,7 +23,8 @@ const msp = state => {
 const mdp = dispatch => {
   return {
     fetchPosts: () => dispatch(fetchPosts()),
-    fetchUsers: () => dispatch(fetchUsers())
+    fetchUsers: () => dispatch(fetchUsers()),
+    fetchComments: () => dispatch(fetchComments())
   };
 };
 
@@ -26,30 +33,22 @@ class PostIndex extends Component {
   componentDidMount() {
     this.props.fetchPosts();
     this.props.fetchUsers();
+    this.props.fetchComments();
   }
 
+
   render() {
+
     const posts = this.props.posts.map(post => {
       return (
-        <li key={post.id} className="post-index-item">
-          <div>
-            <div className="post-feed-img-head">
-              {this.props.users[post.poster_id].username}
-            </div>
-            <div className="post-feed-img"><img src={post.imageUrl}/></div>
-            <div className="post-bottom">
-              <div className="post-bottom-name">
-              {this.props.users[post.poster_id].username}
-              </div>
-              <div className="post-description">
-                {post.description}
-              </div>
-            </div>
-          </div>
-        </li>
-      )
+      <PostIndexItem
+        key={post.id}
+        post={post}
+        user={this.props.users[post.poster_id].username}
+        currentUserId={this.props.currentUserId}
+      />
+      );
     });
-
 
     return (
       <main className="post-index">

@@ -14,7 +14,7 @@ const msp = (state) => {
     }
   });
   return {
-    posts: userPosts
+    posts: userPosts.reverse()
   };
 };
 

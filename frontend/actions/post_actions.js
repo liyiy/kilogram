@@ -39,7 +39,7 @@ export const fetchPost = id => dispatch => {
 
 export const createPost = post => dispatch => {
   return (
-    PostApiUtil.createPost(post).then(res => dispatch(receivePost(post)))
+    PostApiUtil.createPost(post).then(res => dispatch(receivePost(res)))
   );
 };
 

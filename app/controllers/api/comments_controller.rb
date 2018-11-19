@@ -2,12 +2,18 @@ class Api::CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.new(comment_params)
-    @comment.post_id = params[:post_id]
+    # @comment.post_id = params[:post_id]
     if @comment.save
+
       render :show
     else
       render json: @comment, status: :unprocessable_entity
     end
+  end
+
+  def index
+    @comments = Comment.all
+    render :index
   end
 
   def update
@@ -19,8 +25,6 @@ class Api::CommentsController < ApplicationController
     end
   end
 
-  # def show
-  # end
 
   def destroy
     @comment = Comment.find(params[:id])
@@ -31,7 +35,7 @@ class Api::CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:post_id, :body)
   end
 
 

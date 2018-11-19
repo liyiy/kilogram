@@ -1,5 +1,4 @@
 .right-nav {
-  solid red;
   display:flex;
   flex-direction: row-reverse;
   padding-top: 17px;

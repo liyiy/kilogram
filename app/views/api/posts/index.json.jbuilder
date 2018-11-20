@@ -2,6 +2,7 @@
   json.set! post.id do
     json.partial! 'post', post: post
     json.imageUrl url_for(post.photo)
+    json.numLikes post.likes.count
   end
 end
 

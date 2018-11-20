@@ -18,5 +18,11 @@ class Post < ApplicationRecord
     foreign_key: :poster_id,
     class_name: :User
 
-  has_many :comments 
+  has_many :comments
+
+  has_many :likes,
+    class_name: :Like,
+    foreign_key: :likeable_id,
+    as: :likeable
+    
 end

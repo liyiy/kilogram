@@ -1,11 +1,3 @@
-export const fetchLikes = () => {
-  return $.ajax({
-    method: 'GET',
-    url: `api/likes/`
-  });
-};
-
-
 
 export const createLike = (like, user) => {
   return $.ajax({

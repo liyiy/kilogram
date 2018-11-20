@@ -1,3 +1,48 @@
 /* .comment-username {
   font-weight: bold;
 } */
+.all-comments {
+  list-style: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 200px;
+}
+
+.post-comment {
+  display: flex;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.post-comment-username {
+  font-weight: 600;
+}
+
+.post-comment-body {
+  padding-left: 20px;
+  font-weight: 400;
+}
+
+.comment-form-box {
+  color: #999;
+  border-top: 1px solid #efefef;
+}
+
+.comment-form {
+  margin-top: 15px;
+}
+.comment-form-form {
+  color: #999999;
+  border: none;
+  font-size: 14px;
+  height: 18px;
+  width: 500px;
+  padding-left: 15px;
+}
+
+.post-comments-below {
+  display: flex;
+
+}

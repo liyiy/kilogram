@@ -22,8 +22,8 @@ const PostIndexItem = ({ post, user, currentUserId }) => {
           </div>
           <div className="post-comments">
             <PostComments postId={post.id} />
-            <CommentForm postId={post.id} />
           </div>
+          <CommentForm postId={post.id} />
         </div>
       </li>
     );

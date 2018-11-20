@@ -30,14 +30,21 @@ class PostComments extends React.Component {
       if (comment) {
       return (
         <li key={idx}>
-           {comment.body}
+          <div className="post-comment">
+            <div className="post-comment-username">
+               {this.props.users[comment.userId].username}
+             </div>
+             <div className="post-comment-body">
+               {comment.body}
+             </div>
+           </div>
         </li>
       );
     }});
 
     return (
       <div>
-        <ul>
+        <ul className="all-comments">
           {comments}
         </ul>
       </div>

@@ -3,6 +3,9 @@
     json.partial! 'post', post: post
     json.imageUrl url_for(post.photo)
     json.numLikes post.likes.count
+
+    json.userLikes post.liker_ids
+    
   end
 end
 

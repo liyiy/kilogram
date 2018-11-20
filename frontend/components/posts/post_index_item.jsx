@@ -2,6 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PostComments from '../comments/post_comments';
 import CommentForm from '../comments/comment_form';
+import CreateLike from '../likes/create_like';
+
+// class PostIndexItem extends React.Component {
+//   constructor(props) {
+//     super(props);
+//   }
+//
+//   componentDidMount(){
+//
+//   }
+// }
 
 const PostIndexItem = ({ post, user, currentUserId }) => {
 
@@ -13,6 +24,12 @@ const PostIndexItem = ({ post, user, currentUserId }) => {
           </div>
           <div className="post-feed-img"><img src={post.imageUrl}/></div>
           <div className="post-bottom">
+            <div className="like-button">
+              <CreateLike post={post} />
+            </div>
+            <div className="num-likes">
+              {post.numLikes} likes
+            </div>
             <div className="post-bottom-name">
             {user}
             </div>

@@ -4,10 +4,10 @@ export const RECEIVE_LIKES = 'RECEIVE_LIKES';
 export const REMOVE_LIKE = 'REMOVE_LIKE';
 export const RECEIVE_LIKE = 'RECEIVE_LIKE'
 
-export const receiveLike = like => {
+export const receiveLike = ({like}, currUser ) => {
   return {
     type: RECEIVE_LIKE,
-    like
+    like, currUser
   };
 };
 
@@ -18,10 +18,10 @@ export const receiveLikes = likes => {
   };
 };
 
-export const removeLike = (likeId) => {
+export const removeLike = (likeId, currUser) => {
   return {
     type: REMOVE_LIKE,
-    likeId
+    likeId, currUser
   };
 };
 
@@ -31,14 +31,14 @@ export const fetchLikes = () => dispatch => {
   );
 };
 
-export const createLike = like => dispatch => {
+export const createLike = (like, user) => dispatch => {
   return (
-    LikeApiUtil.createLike(like).then(res => dispatch(receiveLike(res)))
+    LikeApiUtil.createLike(like, user).then(res => dispatch(receiveLike(res, user)))
   );
 };
 
-export const deleteLike = likeId => dispatch => {
+export const deleteLike = (likeId, user) => dispatch => {
   return (
-    LikeApiUtil.deleteLike(likeId).then(res => dispatch(removeLike(likeId)))
+    LikeApiUtil.deleteLike(likeId, user).then(res => dispatch(removeLike(likeId, user)))
   );
 };

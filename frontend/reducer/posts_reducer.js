@@ -1,8 +1,8 @@
 import { RECEIVE_POSTS, RECEIVE_POST, REMOVE_POST } from '../actions/post_actions';
+import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 import { merge } from "lodash";
 
 const postsReducer = (state = {}, action) => {
-
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_POSTS:
@@ -13,6 +13,18 @@ const postsReducer = (state = {}, action) => {
       let newState = merge({}, state);
       delete newState[action.postId];
       return newState;
+    case RECEIVE_LIKE:
+      let anothernewState = merge({}, state);
+      anothernewState[action.like.likeable_id].numLikes++;
+      anothernewState[action.like.likeable_id].userLikes.push(action.currUser);
+      return anothernewState;
+    case REMOVE_LIKE:
+      let anotherrnewState = merge({}, state);
+      anotherrnewState[action.likeId].numLikes--;
+      let arr = anotherrnewState[action.likeId].userLikes;
+      let index = arr.indexOf(action.currUser);
+      delete arr[index];
+      return anotherrnewState;
     default:
       return state;
   };

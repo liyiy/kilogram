@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { fetchPosts } from '../../actions/post_actions';
 import { fetchUsers } from '../../actions/user_actions';
 import { fetchComments } from '../../actions/comment_actions';
+import { fetchLikes } from '../../actions/like_actions';
 import CommentForm from '../comments/comment_form';
 import PostIndexItem from './post_index_item';
 
@@ -24,7 +25,8 @@ const mdp = dispatch => {
   return {
     fetchPosts: () => dispatch(fetchPosts()),
     fetchUsers: () => dispatch(fetchUsers()),
-    fetchComments: () => dispatch(fetchComments())
+    fetchComments: () => dispatch(fetchComments()),
+    // fetchLikes: () => dispatch(fetchLikes())
   };
 };
 
@@ -34,6 +36,7 @@ class PostIndex extends Component {
     this.props.fetchPosts();
     this.props.fetchUsers();
     this.props.fetchComments();
+    // this.props.fetchLikes();
   }
 
 

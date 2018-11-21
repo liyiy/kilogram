@@ -3,7 +3,7 @@ class Api::LikesController < ApplicationController
   def create
 
     @like = current_user.likes.new(like_params)
-    # debugger
+    # 
     if @like.save
       render :show
     else

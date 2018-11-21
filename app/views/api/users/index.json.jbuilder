@@ -7,5 +7,7 @@
     json.numPosts user.posts.count
     json.allFollowers user.userFollowers.ids
     json.allFollowings user.userFollowings.ids
+    json.numFollowers user.userFollowers.count
+    json.numFollowings user.userFollowings.count
   end
 end

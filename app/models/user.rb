@@ -46,6 +46,7 @@ class User < ApplicationRecord
     source: :followee
 
 
+  has_one_attached :photo
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

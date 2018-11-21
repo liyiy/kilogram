@@ -7,25 +7,26 @@ export const UNFOLLOW_USER = 'UNFOLLOW_USER';
 export const followUser = (follow, userId) => {
   return {
     type: FOLLOW_USER,
-    userId
+    follow, userId
   };
 };
 
-export const unfollowUser = (id, userId) => {
+export const unfollowUser = (currUserId, userId) => {
   return {
     type: UNFOLLOW_USER,
-    userId
+    currUserId, userId
   };
 };
 
-export const createFollow = (follow, user) => dispatch => {
+export const createFollow = (follow, userId) => dispatch => {
+
   return (
-  FollowApiUtil.createFollow(follow).then(res => dispatch(followUser(user)))
+  FollowApiUtil.createFollow(follow, userId).then(res => dispatch(followUser(res, userId)))
   );
 };
 
-export const deleteFollow = (id, userId) => dispatch => {
+export const deleteFollow = (currUserId, userId) => dispatch => {
   return (
-    FollowApiUtil.deleteFollow(id, userId).then(res => dispatch(unfollowUser(id, userId)))
+    FollowApiUtil.deleteFollow(currUserId, userId).then(res => dispatch(unfollowUser(currUserId, userId)))
   );
 };

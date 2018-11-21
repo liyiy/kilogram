@@ -12,7 +12,7 @@ const PostIndexItem = ({ post, userId, currentUserId, username }) => {
       <li key={post.id} className="post-index-item">
         <div>
           <div className="post-feed-img-head">
-            <Link to={`/users/${userId}`}>{username}</Link>
+            <Link className="no-underline" to={`/users/${userId}`}>{username}</Link>
           </div>
           <div className="post-feed-img"><img src={post.imageUrl}/></div>
           <div className="post-bottom">
@@ -23,10 +23,7 @@ const PostIndexItem = ({ post, userId, currentUserId, username }) => {
               {post.numLikes} likes
             </div>
             <div className="post-bottom-name">
-              {username}
-            </div>
-            <div className="post-description">
-              {post.description}
+              {username}&nbsp; <a className="post-descrip">{post.description}</a>
             </div>
           </div>
           <div className="post-comments">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchComments } from '../../actions/comment_actions';
+import { Link } from 'react-router-dom';
 
 
 const msp = (state, ownProps) => {
@@ -12,7 +13,7 @@ const msp = (state, ownProps) => {
   const users = state.entities.users
 
   return {
-    comments: comments,
+    comments: comments.reverse(),
     users: users
   };
 };
@@ -32,12 +33,14 @@ class PostComments extends React.Component {
         <li key={idx}>
           <div className="post-comment">
             <div className="post-comment-username">
-               {this.props.users[comment.userId].username}
-             </div>
-             <div className="post-comment-body">
+              <Link className="no-underline" to={`/users/${this.props.users[comment.userId].id}`}>
+                {this.props.users[comment.userId].username}
+              </Link> &nbsp;
+             <a className="post-comment-body">
                {comment.body}
-             </div>
+             </a>
            </div>
+         </div>
         </li>
       );
     }});
@@ -53,4 +56,4 @@ class PostComments extends React.Component {
 
 }
 
-export default connect(msp, null)(PostComments);
+export default (connect(msp, null)(PostComments));

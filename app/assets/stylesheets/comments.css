@@ -8,24 +8,34 @@
   padding-top: 10px;
   padding-bottom: 10px;
   height: 200px;
+  overflow: hidden;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.no-underline:visited {
+  color: black;
 }
 
 .post-comment {
   display: flex;
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
+  padding-bottom: 3px;
 }
 
 .post-comment-username {
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .post-comment-body {
-  padding-left: 20px;
   font-weight: 400;
 }
 
 .comment-form-box {
+  z-index: 1;
   color: #999;
   border-top: 1px solid #efefef;
 }

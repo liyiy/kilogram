@@ -44,7 +44,8 @@ class PostIndex extends Component {
       <PostIndexItem
         key={post.id}
         post={post}
-        user={this.props.users[post.poster_id].username}
+        userId={this.props.users[post.poster_id].id}
+        username={this.props.users[post.poster_id].username}
         currentUserId={this.props.currentUserId}
       />
       );

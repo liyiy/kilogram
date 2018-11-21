@@ -27,7 +27,15 @@ class User < ApplicationRecord
 
   has_many :likes,
     foreign_key: :user_id,
-    class_name: :Like 
+    class_name: :Like
+
+  has_many :followers,
+    foreign_key: :follower_id,
+    class_name: :Follow
+
+  has_many :followings,
+    foreign_key: :followee_id,
+    class_name: :Follow
 
 
 

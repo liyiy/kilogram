@@ -5,11 +5,12 @@ import { fetchPosts } from '../../actions/post_actions';
 import { openPost } from '../../actions/modal_actions';
 import PostItem from '../posts/post_item';
 
-const msp = (state) => {
+const msp = (state, ownProps) => {
+  const userId = ownProps.userId;
   const currentUser = state.session.id;
 
   const userPosts = Object.values(state.entities.posts).map(post => {
-    if (post.poster_id === currentUser) {
+    if (post.poster_id === ownProps.userId) {
       return post
     }
   });

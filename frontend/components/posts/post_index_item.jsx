@@ -3,24 +3,16 @@ import { connect } from 'react-redux';
 import PostComments from '../comments/post_comments';
 import CommentForm from '../comments/comment_form';
 import CreateLike from '../likes/create_like';
+import { Link } from 'react-router-dom';
 
-// class PostIndexItem extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-//
-//   componentDidMount(){
-//
-//   }
-// }
 
-const PostIndexItem = ({ post, user, currentUserId }) => {
+const PostIndexItem = ({ post, userId, currentUserId, username }) => {
 
     return (
       <li key={post.id} className="post-index-item">
         <div>
           <div className="post-feed-img-head">
-            {user}
+            <Link to={`/users/${userId}`}>{username}</Link>
           </div>
           <div className="post-feed-img"><img src={post.imageUrl}/></div>
           <div className="post-bottom">
@@ -31,7 +23,7 @@ const PostIndexItem = ({ post, user, currentUserId }) => {
               {post.numLikes} likes
             </div>
             <div className="post-bottom-name">
-            {user}
+            {username}
             </div>
             <div className="post-description">
               {post.description}

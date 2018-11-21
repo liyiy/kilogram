@@ -28,7 +28,6 @@ class CreateLike extends React.Component {
   constructor(props) {
     super(props);
     this.handleLike = this.handleLike.bind(this);
-    // this.handleUnlike = this.handleUnlike.bind(this);
     this.state = {likeable_type: "Post", likeable_id: this.props.post.id}
   }
 
@@ -40,11 +39,6 @@ class CreateLike extends React.Component {
       this.props.createLike(this.state, this.props.currentUserId);
     }
   }
-
-  // handleUnlike(e) {
-  //   e.preventDefault();
-  //   this.props.deleteLike(this.props.post.id);
-  // }
 
 
   render(){

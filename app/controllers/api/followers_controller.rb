@@ -12,9 +12,9 @@ class Api::FollowsController < ApplicationController
   end
 
   def destroy
-    @follow = Follow.find(params[:id])
+    @follow = Follow.find_by(follower_id: params[:id])
     @follow.destroy
-    render :show 
+    render :show
   end
 
   private

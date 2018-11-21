@@ -23,7 +23,7 @@ const PostIndexItem = ({ post, userId, currentUserId, username }) => {
               {post.numLikes} likes
             </div>
             <div className="post-bottom-name">
-            {username}
+              {username}
             </div>
             <div className="post-description">
               {post.description}

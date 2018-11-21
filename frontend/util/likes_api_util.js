@@ -1,4 +1,3 @@
-
 export const createLike = (like, user) => {
   return $.ajax({
     method: 'POST',

@@ -25,8 +25,8 @@ class Post < ApplicationRecord
     foreign_key: :likeable_id,
     as: :likeable
 
-    has_many :likers,
-      through: :likes,
-      source: :user
+  has_many :likers,
+    through: :likes,
+    source: :user
 
 end

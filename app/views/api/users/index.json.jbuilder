@@ -4,6 +4,8 @@
     json.authoredPosts user.posts.each do |post|
       json.extract! post, :id
     end
-    json.numPosts user.posts.count 
+    json.numPosts user.posts.count
+    json.allFollowers user.userFollowers.ids
+    json.allFollowings user.userFollowings.ids
   end
 end

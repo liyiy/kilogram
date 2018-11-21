@@ -30,12 +30,20 @@ class User < ApplicationRecord
     class_name: :Like
 
   has_many :followers,
-    foreign_key: :follower_id,
+    foreign_key: :followee_id,
     class_name: :Follow
 
   has_many :followings,
-    foreign_key: :followee_id,
+    foreign_key: :follower_id,
     class_name: :Follow
+
+  has_many :userFollowers,
+    through: :followers,
+    source: :follower
+  #
+  has_many :userFollowings,
+    through: :followings,
+    source: :followee
 
 
 

@@ -44,7 +44,6 @@ class Follow extends React.Component {
     if (this.props.followed) {
       this.props.deleteFollow(this.props.currUserId, this.props.userId);
     } else {
-
       this.props.createFollow({follower_id: this.props.currUserId, followee_id: this.props.userId}, this.props.userId);
     }
   }

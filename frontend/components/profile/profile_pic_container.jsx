@@ -2,7 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const msp = (state, ownProps) => {
-  const userPic = ownProps.user.imageUrl;
+  let userPic;
+  if (ownProps.user.imageUrl) {
+    userPic = ownProps.user.imageUrl;
+  }
   return {
     userPic: userPic
   };
@@ -11,7 +14,7 @@ const msp = (state, ownProps) => {
 const ProfilePicContainer = (props) => {
   let pic;
   if (props.userPic === undefined) {
-    pic = window.defaultProfilePic;
+    pic = window.defaultProPic;
   } else {
     pic = props.userPic;
   }

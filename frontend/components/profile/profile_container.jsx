@@ -4,6 +4,7 @@ import { logout } from '../../actions/session_actions';
 import { Link, withRouter } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions';
 import ProfilePostsContainer from './profile_posts_container';
+import ProfilePicContainer from './profile_pic_container';
 import { fetchPosts } from '../../actions/post_actions';
 import { fetchUsers } from '../../actions/user_actions';
 import Follow from '../follows/follow';
@@ -75,6 +76,7 @@ class ProfileContainer extends React.Component {
 
       <div>
         <div className="profile-container">
+          <ProfilePicContainer user={this.props.user}/>
           <div className="profile-header">
           <div className="profile-nav">
             <div className="profile-user">

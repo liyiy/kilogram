@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { Link, withRouter } from 'react-router-dom';
-import { openModal } from '../../actions/modal_actions';
+import { openModal, editProfilePic } from '../../actions/modal_actions';
 import ProfilePostsContainer from './profile_posts_container';
 import ProfilePicContainer from './profile_pic_container';
 import { fetchPosts } from '../../actions/post_actions';
@@ -61,17 +61,20 @@ class ProfileContainer extends React.Component {
     const loggingout = () => {
       return this.props.logout().then(this.props.history.push("/login"))
     }
-
     let newpost;
     let follow;
+    let logout;
     if (this.props.userId === this.props.currentUser) {
       newpost =
         (<button className="new-post-btn" onClick={() => dispatch(openModal('createPost'))}>
           New Post
         </button>);
+      logout = (<button onClick={(loggingout)} className="new-post-btn">Log Out</button>);
+
     } else {
       follow = (<Follow user={this.props.user} />);
     }
+    // <img className="setting-icon"src={window.settingIcon} onClick={(loggingout)}></img>
     return (
 
       <div>
@@ -84,7 +87,7 @@ class ProfileContainer extends React.Component {
             </div>
             {follow}
             {newpost}
-            <img className="setting-icon"src={window.settingIcon} onClick={loggingout}></img>
+            {logout}
             </div>
             <div className="profile-counts">
             <p>{this.props.numPosts} posts</p>

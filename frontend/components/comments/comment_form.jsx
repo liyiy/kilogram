@@ -43,7 +43,7 @@ class CommentForm extends React.Component {
               onChange={this.update("body")}
               placeholder="Add a comment..."
             />
-          <input type="submit" />
+          <button type="submit" className="new-comment-btn">...</button>
           </form>
         </div>
       </section>

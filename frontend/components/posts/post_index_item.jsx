@@ -6,12 +6,19 @@ import CreateLike from '../likes/create_like';
 import { Link } from 'react-router-dom';
 
 
-const PostIndexItem = ({ post, userId, currentUserId, username }) => {
+const PostIndexItem = ({ user, post, userId, currentUserId, username }) => {
+  let userpic;
+  if (user.imageUrl) {
+    userpic = user.imageUrl;
+  } else {
+    userpic = window.defaultProPic;
+  }
 
     return (
       <li key={post.id} className="post-index-item">
         <div>
           <div className="post-feed-img-head">
+            <img className="post-prof-pic" src={userpic}></img>
             <Link className="no-underline" to={`/users/${userId}`}>{username}</Link>
           </div>
           <div className="post-feed-img"><img src={post.imageUrl}/></div>

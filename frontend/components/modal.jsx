@@ -4,10 +4,12 @@ import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import PostFormContainer from './posts/post_form_container';
 import PostShow from './posts/post_show';
+import LogOutContainer from './profile/logout_container';
+import EditProfilePicContainer from './profile/edit_profile_pic_container';
 
 
 
-function Modal({modal, post, closeModal}) {
+function Modal({modal, post, user, closeModal}) {
   if(!modal) {
     return null;
   }
@@ -18,6 +20,12 @@ function Modal({modal, post, closeModal}) {
       break;
     case 'showPost':
       component = <PostShow post={post}/>;
+      break;
+    case 'logout':
+      component = <LogOutContainer />;
+      break;
+    case 'editProfilePic':
+      component = <EditProfilePicContainer user={user}/>;
       break;
     default:
       return null;

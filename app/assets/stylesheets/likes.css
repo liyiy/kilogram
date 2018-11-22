@@ -1,10 +1,11 @@
-.heart-liked {
+/* .heart-liked {
   width: 25px;
   height: 25px;
   background-color: #e84b54;
-}
+} */
 
 .heart-unliked {
+  margin-top: 10px;
   width: 25px;
   height: 25px;
 

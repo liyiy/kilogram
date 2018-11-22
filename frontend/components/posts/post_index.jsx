@@ -46,6 +46,7 @@ class PostIndex extends Component {
           <PostIndexItem
             key={post.id}
             post={post}
+            user={users[post.poster_id]}
             userId={users[post.poster_id].id}
             username={users[post.poster_id].username}
             currentUserId={currentUserId}

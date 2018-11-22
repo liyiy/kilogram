@@ -45,13 +45,13 @@ class CreateLike extends React.Component {
     let heart;
 
     if (this.props.liked) {
-      heart = "heart-liked";
+      heart = window.heartLiked;
     } else {
-      heart = "heart-unliked";
+      heart = window.heartUnliked;
     };
 
     return (
-      <img className={heart} onClick={this.handleLike} src={window.heartLike}></img>
+      <img className="heart-unliked" onClick={this.handleLike} src={heart}></img>
     );
   }
 }

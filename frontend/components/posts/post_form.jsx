@@ -28,8 +28,7 @@ class PostForm extends Component {
       contentType: false,
       processData: false
     }).then(this.props.closeModal);
-    // const post = Object.assign({}, this.state);
-    // this.props.createPost(post).then(this.props.closeModal);
+
   }
 
   update(field) {

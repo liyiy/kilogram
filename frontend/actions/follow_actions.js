@@ -4,7 +4,8 @@ export const FOLLOW_USER = 'FOLLOW_USER';
 export const UNFOLLOW_USER = 'UNFOLLOW_USER';
 
 
-export const followUser = (follow, userId) => {
+export const followUser = ({follow}, userId) => {
+
   return {
     type: FOLLOW_USER,
     follow, userId

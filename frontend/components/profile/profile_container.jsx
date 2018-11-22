@@ -8,7 +8,6 @@ import { fetchPosts } from '../../actions/post_actions';
 import { fetchUsers } from '../../actions/user_actions';
 import Follow from '../follows/follow';
 
-
 const msp = (state, ownProps) => {
   const userId = parseInt(ownProps.match.params.userId)
   const currentUser = state.session.id;
@@ -16,15 +15,14 @@ const msp = (state, ownProps) => {
   let username;
   let followers;
   let followings;
-  // let follows;
   let user;
+
   if (state.entities.users[userId]) {
     user = state.entities.users[userId];
     numPosts = state.entities.users[userId].numPosts;
     username = state.entities.users[userId].username;
     followers = state.entities.users[userId].numFollowers;
     followings = state.entities.users[userId].numFollowings;
-    // follows = state.entities.users[currentUser].follows;
   } else {
     numPosts = 0;
   }
@@ -35,7 +33,6 @@ const msp = (state, ownProps) => {
     username: username,
     followers: followers,
     followings: followings,
-    // follows: follows,
     currentUser: currentUser,
     loggedIn: Boolean(currentUser)
   };
@@ -65,16 +62,15 @@ class ProfileContainer extends React.Component {
     }
 
     let newpost;
-
+    let follow;
     if (this.props.userId === this.props.currentUser) {
-       newpost =
-          <button className="new-post-btn" onClick={() => dispatch(openModal('createPost'))}>
-            New Post
-          </button>
-      }
-     else {
-        newpost = null;
-      }
+      newpost =
+        (<button className="new-post-btn" onClick={() => dispatch(openModal('createPost'))}>
+          New Post
+        </button>);
+    } else {
+      follow = (<Follow user={this.props.user} />);
+    }
     return (
 
       <div>
@@ -84,9 +80,7 @@ class ProfileContainer extends React.Component {
             <div className="profile-user">
               {this.props.username}
             </div>
-            <Follow
-              user={this.props.user}
-            />
+            {follow}
             {newpost}
             <button onClick={loggingout}>LOGOUT</button>
             </div>

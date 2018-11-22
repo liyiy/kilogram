@@ -14,25 +14,21 @@ const usersReducer = (state={}, action) => {
       return merge({}, state, {[action.user.id]: action.user});
     case FOLLOW_USER:
       let newState = merge({}, state);
-
-      newState[action.follow.follow.follower_id].allFollowings.push(action.userId);
-      newState[action.follow.follow.followee_id].allFollowers.push(action.currUserId);
-      newState[action.follow.follow.follower_id].numFollowings++;
-      newState[action.follow.follow.followee_id].numFollowers++;
+      newState[action.follow.follower_id].allFollowings.push(action.follow.followee_id);
+      newState[action.follow.followee_id].allFollowers.push(action.follow.follower_id);
+      newState[action.follow.follower_id].numFollowings++;
+      newState[action.follow.followee_id].numFollowers++;
       return newState;
     case UNFOLLOW_USER:
       let anothernewState = merge({}, state);
-
       let currUserArr = anothernewState[action.currUserId].allFollowings;
       let userArr = anothernewState[action.userId].allFollowers;
-
-      let index = currUserArr.indexOf(action.userId);
-      let index2 = userArr.indexOf(action.currUserId)
-      delete currUserArr[index];
-      delete userArr[index2];
+      let currUser = action.currUserId;
+      let user = action.userId;
+      anothernewState[action.currUserId].allFollowings = currUserArr.filter(id => id != user)
+      anothernewState[action.userId].allFollowers = userArr.filter(id => id != currUser)
       anothernewState[action.currUserId].numFollowings--;
       anothernewState[action.userId].numFollowers--;
-      
       return anothernewState;
     default:
       return state;

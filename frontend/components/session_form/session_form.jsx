@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
       </ul>
     );
   }
-  
+
   render() {
     return (
       <div className="login-form-container">
@@ -60,7 +60,7 @@ class SessionForm extends React.Component {
               placeholder="Username"
             />
             <br/>
-            <input type="text"
+            <input type="password"
               value={this.state.password}
               onChange={this.update('password')}
               placeholder="Password"

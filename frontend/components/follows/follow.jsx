@@ -52,15 +52,18 @@ class Follow extends React.Component {
 
   render(){
     let isFollowed;
+    let followClass;
 
     if (this.props.followed) {
       isFollowed = "Unfollow";
+      followClass="unfollow-btn";
     } else {
       isFollowed = "Follow"
+      followClass="follow-btn";
     };
 
     return (
-      <button onClick={this.handleFollow}>{isFollowed}</button>
+      <button className={followClass} onClick={this.handleFollow}>{isFollowed}</button>
     );
   }
 }

@@ -38,17 +38,22 @@ class PostIndex extends Component {
 
 
   render() {
-
-    const posts = this.props.posts.map(post => {
-      return (
-      <PostIndexItem
-        key={post.id}
-        post={post}
-        userId={this.props.users[post.poster_id].id}
-        username={this.props.users[post.poster_id].username}
-        currentUserId={this.props.currentUserId}
-      />
-      );
+    const {users, currentUserId} = this.props;
+    let posts;
+    posts = this.props.posts.map(post => {
+      if (users[post.poster_id]) {
+        return (
+          <PostIndexItem
+            key={post.id}
+            post={post}
+            userId={users[post.poster_id].id}
+            username={users[post.poster_id].username}
+            currentUserId={currentUserId}
+            />
+        );
+      } else {
+        null;
+      }
     });
 
     return (

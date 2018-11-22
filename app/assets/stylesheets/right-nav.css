@@ -11,6 +11,7 @@
 .profile-icon {
   height: 37px;
   width: 37px;
+  padding-right: 100px;
 }
 
 .profile-icon:hover {

@@ -38,7 +38,6 @@ const NavBar = ({ currentUser, loggedIn, logout, history }) => {
       </div>
       </Link>
       <div className="right-nav">
-        <button onClick={loggingout}>LOGOUT</button>
         <img className="profile-icon" src={window.profileLogo}
              onClick={profilePage}>
         </img>

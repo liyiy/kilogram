@@ -41,10 +41,11 @@
 }
 
 .comment-form {
-  margin-top: 15px;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 .comment-form-form {
-  color: #999999;
+  color: black;
   border: none;
   font-size: 14px;
   height: 18px;

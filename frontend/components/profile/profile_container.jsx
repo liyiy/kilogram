@@ -58,7 +58,7 @@ class ProfileContainer extends React.Component {
 
   render() {
     const loggingout = () => {
-      return logout().then(this.props.history.push("/login"))
+      return this.props.logout().then(this.props.history.push("/login"))
     }
 
     let newpost;
@@ -82,11 +82,13 @@ class ProfileContainer extends React.Component {
             </div>
             {follow}
             {newpost}
-            <button onClick={loggingout}>LOGOUT</button>
+            <img className="setting-icon"src={window.settingIcon} onClick={loggingout}></img>
             </div>
-          <p>{this.props.numPosts} posts</p>
-          <p>{this.props.followers} followers</p>
-          <p>{this.props.followings} following</p>
+            <div className="profile-counts">
+            <p>{this.props.numPosts} posts</p>
+            <p>{this.props.followers} followers</p>
+            <p>{this.props.followings} following</p>
+            </div>
           </div>
         </div>
         <div className="profile-posts-container">

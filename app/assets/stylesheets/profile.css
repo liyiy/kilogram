@@ -1,7 +1,7 @@
 .profile-container {
 
   margin-top: 105px;
-  padding-left: 375px;
+  padding-left: 300px;
   font-family: 'Roboto', sans-serif;
   border-bottom: 1px solid #efefef;
 
@@ -70,9 +70,24 @@
   font-size: 13px;
   width: 84px;
   height: 30px;
-  margin-left: 146px;
+  /* margin-left: 146px; */
 }
 
 .new-post-btn:hover {
   cursor: pointer;
+}
+
+.setting-icon {
+  height: 30px;
+  width: 30px;
+}
+
+.setting-icon:hover {
+  cursor: pointer;
+}
+
+.profile-counts {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
 }

@@ -12,8 +12,8 @@ const PostItem = (props) => {
 
   return (
     <li key={props.post.id} className="profile-post-index-item">
-        <div className="profile-post-list-img">
-          <img onClick={props.openPost} src={props.post.imageUrl} />
+        <div className="profile-post-list-img" onClick={props.openPost}>
+          <img src={props.post.imageUrl} />
         </div>
     </li>
   );

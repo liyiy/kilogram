@@ -20,6 +20,7 @@ class PostForm extends Component {
     if (this.state.imageFile) {
       formData.append('post[photo]', this.state.imageFile);
     }
+     
     const history = this.props.history;
     $.ajax({
       url: '/api/posts',
@@ -27,7 +28,7 @@ class PostForm extends Component {
       data: formData,
       contentType: false,
       processData: false
-    }).then(this.props.closeModal);
+    }).then(this.props.closeModal).then(history.push("/"));
 
   }
 

@@ -1,24 +1,22 @@
-# README
+# Kilogram
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A full-stack web application that mimics the Instagram website. Users are able to upload and share their photos, leave likes and comments for them, and follow other users. It's a photo centered forum for people to connect and share their ideas, thoughts or moments.   
 
-Things you may want to cover:
+## Frameworks Used 
 
-* Ruby version
+Kilogram uses Ruby on Rails on the backend and React/Redux for the frontend.
 
-* System dependencies
+# Features 
 
-* Configuration
+Users can sign up and log in with user authentication, no passwords are kept in the backend. The session is kept upon closing and reopening the page. 
 
-* Database creation
+### Photo Feed and User Profile
+The user is taken to the homepage upon login, with a feed of other users' posts. 
 
-* Database initialization
+### Creating a Post 
+User is able to upload a post with a description and have it liked/commented on by other users.
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+

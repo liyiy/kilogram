@@ -13,7 +13,7 @@ const msp = (state, ownProps) => {
   const users = state.entities.users
 
   return {
-    comments: comments.reverse(),
+    comments: comments,
     users: users
   };
 };

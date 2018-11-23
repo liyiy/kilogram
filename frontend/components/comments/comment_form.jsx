@@ -16,6 +16,7 @@ class CommentForm extends React.Component {
     super(props);
     this.state = {post_id: this.props.postId, body: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleEnter = this.handleEnter.bind(this);
   }
 
 
@@ -23,6 +24,12 @@ class CommentForm extends React.Component {
     e.preventDefault()
     this.props.createComment(this.state);
     this.setState({ ["body"]: "" });
+  }
+
+  handleEnter(e) {
+    if (e.keyCode === 13) {
+      this.handleSubmit(e)
+    };
   }
 
   update(field) {
@@ -34,7 +41,6 @@ class CommentForm extends React.Component {
     return (
       <section className="comment-form-box">
         <div className="comment-form">
-          <form onSubmit={this.handleSubmit}>
             <textarea
               className="comment-form-form"
               rows="3"
@@ -42,9 +48,8 @@ class CommentForm extends React.Component {
               value={this.state.body}
               onChange={this.update("body")}
               placeholder="Add a comment..."
+              onKeyDown={this.handleEnter}
             />
-          <button type="submit" className="new-comment-btn">...</button>
-          </form>
         </div>
       </section>
     );

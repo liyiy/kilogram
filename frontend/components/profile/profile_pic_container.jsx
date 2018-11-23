@@ -5,7 +5,7 @@ import { editProfilePic } from '../../actions/modal_actions';
 const msp = (state, ownProps) => {
   let userPic;
   let user;
-  if (ownProps.user.imageUrl) {
+  if (ownProps.user && ownProps.user.imageUrl) {
     userPic = ownProps.user.imageUrl;
   }
   if (ownProps.user) {

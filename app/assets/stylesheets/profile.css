@@ -93,6 +93,9 @@
   width: 300px;
 }
 
+.profile-counts p:hover {
+  cursor: pointer;
+}
 .profile-pic {
   border-radius: 80%;
   height: 145px;

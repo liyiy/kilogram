@@ -15,14 +15,15 @@ const msp = (state, ownProps) => {
     }
   });
   return {
-    posts: userPosts.reverse()
+    posts: userPosts.reverse(),
+    currentUser: currentUser
   };
 };
 
 const mdp = (dispatch) => {
   return {
     fetchPosts: () => dispatch(fetchPosts()),
-    openPost: (modal, post) => dispatch(openPost(modal, post))
+    openPost: (modal, post, currUserId) => dispatch(openPost(modal, post, currUserId))
   };
 };
 
@@ -41,7 +42,7 @@ class ProfilePostsContainer extends Component {
            <PostItem
             key={post.id}
             post={post}
-            openPost={() => this.props.openPost('showPost', post)}
+            openPost={() => this.props.openPost('showPost', post, this.props.currentUser)}
             />
          );
        }

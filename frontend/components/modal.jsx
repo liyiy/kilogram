@@ -33,7 +33,7 @@ function Modal({modal, post, user, follows, closeModal}) {
       component = <PostFormContainer />;
       break;
     case 'showPost':
-      component = <PostShow post={post}/>;
+      component = <PostShow post={post} />;
       break;
     case 'showFollowers':
       component = <ShowFollows followers={follows} />;

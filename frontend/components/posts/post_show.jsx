@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { deletePost } from '../../actions/post_actions';
 import { closeModal } from '../../actions/modal_actions';
 
+
 const mdp = (dispatch) => {
   return {
     deletePost: (id) => dispatch(deletePost(id))
@@ -14,22 +15,30 @@ const mdp = (dispatch) => {
 class PostShow extends React.Component {
   constructor(props) {
     super(props);
+
     this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleDelete(e) {
     e.preventDefault();
-    this.props.deletePost(this.props.post.id).then(dispatch(closeModal()));
+    this.props.deletePost(this.props.post.post.id).then(dispatch(closeModal()));
   }
 
   render() {
-    return(
-      <div className="post-show">
-        <img src={this.props.post.imageUrl} />
-        <div className="post-show-right">
+
+    let deleteButton;
+      if (this.props.post.currUser === this.props.post.post.poster_id) {
+        deleteButton = (
           <button className="delete-post-button" onClick={this.handleDelete}>
             Delete Post
           </button>
+        );
+      };
+    return(
+      <div className="post-show">
+        <img src={this.props.post.post.imageUrl} />
+        <div className="post-show-right">
+          {deleteButton}
         </div>
       </div>
     );

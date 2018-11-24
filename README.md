@@ -9,14 +9,17 @@ Kilogram uses Ruby on Rails on the backend and React/Redux for the frontend.
 # Features 
 
 Users can sign up and log in with user authentication, no passwords are kept in the backend. The session is kept upon closing and reopening the page. 
+![User Auth](https://i.imgur.com/a7cprVw.png)
 
 ### Photo Feed and User Profile
 The user is taken to the homepage upon login, with a feed of other users' posts. 
+![Profile](https://i.imgur.com/CIAIOQJ.png)
 
 ### Creating a Post 
 User is able to upload a post with a description and have it liked/commented on by other users.
+![Post Upload](https://i.imgur.com/WYRhXbA.png)
 
-
-
+### Follows 
+User can follow other accounts 
 
 

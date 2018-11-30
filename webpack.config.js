@@ -1,23 +1,18 @@
 
-const path = require('path');
+var path = require('path');
 
-const webpack = require("webpack");
+var webpack = require("webpack");
 
-const plugins = []; 
-const devPlugins = []; 
+var plugins = [];
+var devPlugins = [];
 
-const prodPlugins = [
+var prodPlugins = [
   new webpack.DefinePlugin({
-    'process.env': {
-      'NODE_ENV': JSON.stringify('production')
-    }
-  }),
-  new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      warnings: true
-    }
-  })
-];
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
+  ];
 
 plugins = plugins.concat(
   process.env.NODE_ENV === 'production' ? prodPlugins : devPlugins
@@ -25,14 +20,14 @@ plugins = plugins.concat(
 
 module.exports = {
   context: __dirname,
-  entry: "./frontend/<name of entry file>",
+  entry: "./frontend/kilogram.jsx",
   output: {
     path: path.resolve(__dirname, "app", "assets", "javascripts"),
     filename: "bundle.js"
   },
   plugins: plugins,
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,

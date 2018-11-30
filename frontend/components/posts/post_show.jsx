@@ -26,7 +26,6 @@ class PostShow extends React.Component {
 
   render() {
 
-    if (!this.props.post) return <></>;
 
     let deleteButton;
       if (this.props.post.currUser === this.props.post.post.poster_id) {

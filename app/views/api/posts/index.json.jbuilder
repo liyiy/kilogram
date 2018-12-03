@@ -1,11 +1,13 @@
 @posts.each do |post|
   json.set! post.id do
     json.partial! 'post', post: post
-    json.imageUrl url_for(post.photo)
+    if post.photo.attached?
+      json.imageUrl url_for(post.photo)
+    end
     json.numLikes post.likes.count
 
     json.userLikes post.liker_ids
-    
+
   end
 end
 

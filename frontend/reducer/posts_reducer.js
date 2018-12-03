@@ -22,8 +22,7 @@ const postsReducer = (state = {}, action) => {
       let anotherrnewState = merge({}, state);
       anotherrnewState[action.likeId].numLikes--;
       let arr = anotherrnewState[action.likeId].userLikes;
-      let index = arr.indexOf(action.currUser);
-      delete arr[index];
+      anotherrnewState[action.likeId].userLikes = arr.filter(likerId => likerId != action.currUser);
       return anotherrnewState;
     default:
       return state;

@@ -6,9 +6,11 @@ export const createLike = (like, user) => {
   });
 };
 
-export const deleteLike = (id, user) => {
+export const deleteLike = (like, likeableId, user) => {
+
   return $.ajax({
     method: 'DELETE',
-    url: `api/likes/${id}`
+    url: `api/likes/${likeableId}`,
+    data: { like }
   });
 };

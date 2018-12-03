@@ -3,7 +3,7 @@ import { createLike, deleteLike } from '../../actions/like_actions';
 import { connect } from 'react-redux';
 
 const msp = (state, ownProps) => {
-
+  const post = ownProps.post;
   const userLikes = ownProps.post.userLikes;
   const currentUserId = state.session.id;
   const liked = userLikes.includes(state.session.id);
@@ -11,7 +11,8 @@ const msp = (state, ownProps) => {
   return {
     currentUserId,
     userLikes,
-    liked
+    liked,
+    post
   };
 
 }
@@ -19,7 +20,7 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => {
   return {
     createLike: (like, user) => dispatch(createLike(like, user)),
-    deleteLike: (likeId, user) => dispatch(deleteLike(likeId, user))
+    deleteLike: (like, likeableId, user) => dispatch(deleteLike(like, likeableId, user))
   };
 };
 
@@ -28,15 +29,20 @@ class CreateLike extends React.Component {
   constructor(props) {
     super(props);
     this.handleLike = this.handleLike.bind(this);
-    this.state = {likeable_type: "Post", likeable_id: this.props.post.id}
+    this.state = {likeable_type: "Post",
+      likeable_id: this.props.post.id,
+      user_id: this.props.currentUserId,
+      disable: false}
   }
 
   handleLike(e) {
     e.preventDefault();
-    if (this.props.liked) {
-      this.props.deleteLike(this.props.post.id, this.props.currentUserId);
-    } else {
-      this.props.createLike(this.state, this.props.currentUserId);
+    if (this.props.liked && this.state.disable == false) {
+      this.setState({disable: true});
+      this.props.deleteLike(this.state, this.props.post.id, this.props.currentUserId).then(() => this.setState({disable: false}));
+    } else if (this.state.disable == false) {
+      this.setState({disable: true});
+      this.props.createLike(this.state, this.props.currentUserId).then(() => this.setState({disable: false}));
     }
   }
 

@@ -12,6 +12,8 @@
 
 class Post < ApplicationRecord
   validates :image_url, :poster_id, presence: true
+  validate :photo_attached
+
   has_one_attached :photo
 
   belongs_to :user,
@@ -28,5 +30,11 @@ class Post < ApplicationRecord
   has_many :likers,
     through: :likes,
     source: :user
+
+  def photo_attached
+    if !self.photo.attached?
+      errors.add("must have photo")
+    end 
+  end
 
 end

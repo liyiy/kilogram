@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { logout } from '../actions/session_actions';
 import { Link, withRouter } from 'react-router-dom';
 import { openModal } from '../actions/modal_actions';
-
+import Search from './search/search';
 
 const msp = (state) => {
   const currentUserId = state.session.id;
@@ -37,6 +37,9 @@ const NavBar = ({ currentUser, loggedIn, logout, history }) => {
         <span className="left-nav-title">Kilogram</span>
       </div>
       </Link>
+      <div className="search-bar">
+        <Search />
+      </div>
       <div className="right-nav">
         <img className="profile-icon" src={window.profileLogo}
              onClick={profilePage}>

@@ -4,28 +4,25 @@ import { merge } from "lodash";
 
 const postsReducer = (state = {}, action) => {
   Object.freeze(state);
+  let newState = merge({}, state);
+
   switch(action.type) {
     case RECEIVE_POSTS:
       return merge({}, state, action.posts);
     case RECEIVE_POST:
       return merge({}, state, {[action.post.id]: action.post});
     case REMOVE_POST:
-      let newState = merge({}, state);
       delete newState[action.postId];
       return newState;
     case RECEIVE_LIKE:
-      let anothernewState = merge({}, state);
-      anothernewState[action.like.likeable_id].numLikes++;
-      anothernewState[action.like.likeable_id].userLikes.push(action.currUser);
-      return anothernewState;
+      newState[action.like.likeable_id].numLikes++;
+      newState[action.like.likeable_id].userLikes.push(action.currUser);
+      return newState;
     case REMOVE_LIKE:
-      let anotherrnewState = merge({}, state);
-
-      anotherrnewState[action.likeableId].numLikes--;
-
-      let arr = anotherrnewState[action.likeableId].userLikes;
-      anotherrnewState[action.likeableId].userLikes = arr.filter(likerId => likerId != action.currUser);
-      return anotherrnewState;
+      newState[action.likeableId].numLikes--;
+      let arr = newState[action.likeableId].userLikes;
+      newState[action.likeableId].userLikes = arr.filter(likerId => likerId != action.currUser);
+      return newState;
     default:
       return state;
   };

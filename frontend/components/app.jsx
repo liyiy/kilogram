@@ -14,9 +14,7 @@ import NavBar from './navbar';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import PostIndex from './posts/post_index';
-// import PostShow from './posts/post_show';
 import ProfileContainer from './profile/profile_container';
-
 
 const App = () => {
   return (

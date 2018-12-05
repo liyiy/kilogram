@@ -6,6 +6,7 @@ import { openModal } from '../actions/modal_actions';
 import Search from './search/search';
 
 const msp = (state) => {
+
   const currentUserId = state.session.id;
   return {
     currentUser: state.entities.users[currentUserId],

@@ -11,7 +11,12 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    users = User.all
+    if params[:username]
+      users = users.where("username LIKE :username",
+      {:username => "#{params[:username]}%"})
+    end
+    @users = users
     render :index
   end
 
@@ -26,4 +31,8 @@ class Api::UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :password, :photo)
   end
+
+  # def bounds
+  #   params[:bounds]
+  # end
 end

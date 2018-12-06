@@ -6,7 +6,8 @@ import UserIndex from './user_index';
 const msp = state => {
   return {
   searches: Object.values(state.entities.search),
-  users: Object.values(state.entities.users)
+  users: Object.values(state.entities.users),
+  value: Object.values(state.ui.filters)
   };
 };
 
@@ -20,8 +21,6 @@ class Search extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {query: ''};
-    this.update = this.update.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -29,22 +28,27 @@ class Search extends React.Component {
     return e => this.props.updateFilter(filter, e.currentTarget.value)
   }
 
-  update() {
-    return e => this.setState({query: e.currentTarget.value})
-  }
-
   render() {
+    let search;
+    if (this.props.value[0] === "") {
+      search = null;
+    } else {
+      search = <UserIndex users={this.props.searches} />
+    }
     return (
-      <div>
+      <>
+      <div className="search">
+      <div className="search-bar">
       <form>
         <input
           placeholder="Search"
           onChange={this.handleChange('users')}
         />
-      <p>{this.state.query}</p>
       </form>
-      <UserIndex users={this.props.searches} />
       </div>
+        {search}
+      </div>
+      </>
     )
   }
 

@@ -1,13 +1,13 @@
 import React from 'react';
 
 const UserIndex = ({ users }) => (
-  <ul>
+  <div className="search-results">
     {users.map(user => (
       <li key={user.id}>
           {user.username}
       </li>
     ))}
-  </ul>
+  </div>
 );
 
 export default UserIndex;

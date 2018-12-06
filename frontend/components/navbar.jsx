@@ -38,9 +38,7 @@ const NavBar = ({ currentUser, loggedIn, logout, history }) => {
         <span className="left-nav-title">Kilogram</span>
       </div>
       </Link>
-      <div className="search-bar">
         <Search />
-      </div>
       <div className="right-nav">
         <img className="profile-icon" src={window.profileLogo}
              onClick={profilePage}>

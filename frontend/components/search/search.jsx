@@ -30,7 +30,7 @@ class Search extends React.Component {
 
   render() {
     let search;
-    if (this.props.value[0] === "") {
+    if (this.props.value[0] === "" || this.props.searches.length === 0) {
       search = null;
     } else {
       search = <UserIndex users={this.props.searches} />

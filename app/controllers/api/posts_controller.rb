@@ -3,6 +3,11 @@ class Api::PostsController < ApplicationController
 
   def create
     @post = current_user.posts.new(post_params)
+    
+    if params[:post][:photo]
+      @post.photo.attach(params[:post][:photo])
+    end
+
     if @post.save
       render :show
     else
@@ -35,7 +40,7 @@ class Api::PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    render :show 
+    render :show
   end
 
   private

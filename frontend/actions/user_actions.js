@@ -30,3 +30,9 @@ export const fetchUser = (user) => dispatch => {
     UsersApiUtil.fetchUser(user).then(res => dispatch(receiveUser(res)))
   );
 };
+
+export const fetchSearch = (user) => dispatch => {
+  return (
+    UsersApiUtil.fetchSearch(user).then(res => dispatch(receiveUsers(res)))
+  );
+};

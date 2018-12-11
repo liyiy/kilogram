@@ -20,6 +20,15 @@ class Api::UsersController < ApplicationController
     render :index
   end
 
+  def search
+    if params[:username] != ""
+      @users = User.all.where("username LIKE :username",
+      {:username => "#{params[:username]}%"})
+    end
+    # debugger 
+    render :index
+  end
+
   def show
     @user = User.find(params[:id])
     render 'api/users/show.json.jbuilder'

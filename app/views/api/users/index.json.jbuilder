@@ -1,3 +1,5 @@
+if @users
+
 @users.each do |user|
   json.set! user.id do
     json.extract! user, :id, :username
@@ -10,4 +12,6 @@
     json.numFollowers user.userFollowers.count
     json.numFollowings user.userFollowings.count
   end
+end
+
 end

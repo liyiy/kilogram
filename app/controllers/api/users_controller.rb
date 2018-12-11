@@ -11,12 +11,7 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    users = User.all
-    if params[:username]
-      users = users.where("username LIKE :username",
-      {:username => "#{params[:username]}%"})
-    end
-    @users = users
+    @users = User.all
     render :index
   end
 
@@ -25,7 +20,6 @@ class Api::UsersController < ApplicationController
       @users = User.all.where("username LIKE :username",
       {:username => "#{params[:username]}%"})
     end
-    # debugger 
     render :index
   end
 

@@ -3,8 +3,14 @@ import { createLike, deleteLike } from '../../actions/like_actions';
 import { connect } from 'react-redux';
 
 const msp = (state, ownProps) => {
+  let userLikes;
   const post = ownProps.post;
-  const userLikes = ownProps.post.userLikes;
+  if (ownProps.post.userLikes) {
+   userLikes = ownProps.post.userLikes;
+   } else {
+     userLikes = [];
+   };
+
   const currentUserId = state.session.id;
   const liked = userLikes.includes(state.session.id);
 

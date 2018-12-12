@@ -47,3 +47,21 @@
   border-bottom: 1px solid #e6e6e6;
   padding: 8px 14px 8px 14px;
 }
+
+.search-pic {
+  display: flex;
+}
+
+.search-pic li {
+  display: flex;
+}
+.search-pic img {
+  height: 30px;
+  width: 30px;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
+.search-pic div {
+  /* border: 2px solid red; */
+}

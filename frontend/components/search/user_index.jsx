@@ -1,16 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProfilePicContainer from '../profile/profile_pic_container';
 
-const UserIndex = ({ users }) => (
+const UserIndex = ({ users }) => {
+  // debugger
+  return (
   <div className="search-results">
     {users.map(user => (
-      <Link key={user.id} className="no-underline" to={`/users/${user.id}`}>
+      <Link key={user.id} className="no-underline search-pic" to={`/users/${user.id}`}>
         <li key={user.id}>
-          {user.username}
+
+            <ProfilePicContainer user={user}/>
+
+          <div>{user.username}</div>
         </li>
      </Link>
     ))}
   </div>
 );
+};
 
 export default UserIndex;

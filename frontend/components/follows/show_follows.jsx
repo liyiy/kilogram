@@ -1,16 +1,8 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
-// import { connect } from 'react-redux';
-// import { closeModal } from '../../actions/modal_actions';
-
-// const mdp = (dispatch) => {
-//   return {
-//   };
-// };
+import ProfilePicContainer from '../profile/profile_pic_container';
 
 const ShowFollows = (props) => {
-
 
   let followers;
   let followings;
@@ -21,6 +13,7 @@ const ShowFollows = (props) => {
         <li key={follower.id}><Link
         className="follows-link"
         to={`/users/${follower.id}`}>
+        <ProfilePicContainer user={follower}/>
         {follower.username}
         </Link>
         </li>
@@ -35,6 +28,7 @@ const ShowFollows = (props) => {
         <li key={following.id}><Link
         className="follows-link"
         to={`/users/${following.id}`}>
+        <ProfilePicContainer user={following}/>
         {following.username}
         </Link></li>
       );

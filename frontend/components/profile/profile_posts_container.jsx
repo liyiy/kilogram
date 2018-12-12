@@ -29,10 +29,6 @@ const mdp = (dispatch) => {
 
 class ProfilePostsContainer extends Component {
 
-  componentDidMount() {
-    this.props.fetchPosts();
-  }
-
   render() {
     let posts;
 

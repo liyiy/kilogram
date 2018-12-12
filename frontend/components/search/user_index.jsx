@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import ProfilePicContainer from '../profile/profile_pic_container';
 
 const UserIndex = ({ users }) => {
-  // debugger
   return (
   <div className="search-results">
     {users.map(user => (

@@ -13,7 +13,7 @@
 }
 
 .left-nav-link {
-  position: absolute;
+  /* position: absolute; */
   text-decoration: none;
   color: black;
   padding-left: 50px;

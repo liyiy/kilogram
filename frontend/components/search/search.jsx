@@ -43,6 +43,7 @@ class Search extends React.Component {
         <input
           placeholder="Search"
           onChange={this.handleChange('users')}
+          onBlur={() => this.props.updateFilter('users', "")}
         />
       </form>
       </div>

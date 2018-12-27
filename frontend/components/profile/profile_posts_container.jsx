@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { fetchPosts } from '../../actions/post_actions';
 import { openPost } from '../../actions/modal_actions';
 import PostItem from '../posts/post_item';
+// import PostComments from '../comments/post_comments';
 
 const msp = (state, ownProps) => {
   const userId = ownProps.userId;
@@ -11,12 +12,12 @@ const msp = (state, ownProps) => {
 
   const userPosts = Object.values(state.entities.posts).map(post => {
     if (post.poster_id === ownProps.userId) {
-      return post
+      return post;
     }
   });
   return {
     posts: userPosts.reverse(),
-    currentUser: currentUser
+    currentUser: currentUser,
   };
 };
 
@@ -38,7 +39,7 @@ class ProfilePostsContainer extends Component {
            <PostItem
             key={post.id}
             post={post}
-            openPost={() => this.props.openPost('showPost', post, this.props.currentUser)}
+            openPost={() => this.props.openPost('showPost', post, post.comments, this.props.currentUser)}
             />
          );
        }

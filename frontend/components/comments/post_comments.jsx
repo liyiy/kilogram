@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchComments } from '../../actions/comment_actions';
 import { Link } from 'react-router-dom';
 
 
@@ -10,7 +9,7 @@ const msp = (state, ownProps) => {
       return ({userId: comment.user_id, body: comment.body, id: comment.id});
     }
   });
-  const users = state.entities.users
+  const users = state.entities.users;
 
   return {
     comments: comments,

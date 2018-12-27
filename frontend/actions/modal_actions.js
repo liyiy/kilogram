@@ -18,10 +18,10 @@ export const closeModal = () => {
   };
 };
 
-export const openPost = (modal, post, currUser) => {
+export const openPost = (modal, post, postComments, currUser) => {
   return {
     type: OPEN_POST,
-    modal, post, currUser
+    modal, post, postComments, currUser
   };
 };
 

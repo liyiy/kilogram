@@ -23,7 +23,7 @@ const mdp = dispatch => {
   };
 };
 
-function Modal({modal, post, user, follows, closeModal}) {
+function Modal({modal, post, postComments, user, follows, closeModal}) {
   if(!modal) {
     return null;
   }
@@ -33,7 +33,7 @@ function Modal({modal, post, user, follows, closeModal}) {
       component = <PostFormContainer />;
       break;
     case 'showPost':
-      component = <PostShow post={post} />;
+      component = <PostShow post={post} postComments={postComments} />;
       break;
     case 'showFollowers':
       component = <ShowFollows followers={follows} />;

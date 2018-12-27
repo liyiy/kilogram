@@ -1,9 +1,8 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { deletePost } from '../../actions/post_actions';
 import { closeModal } from '../../actions/modal_actions';
-
 
 const mdp = (dispatch) => {
   return {
@@ -25,8 +24,7 @@ class PostShow extends React.Component {
   }
 
   render() {
-
-
+    
     let deleteButton;
       if (this.props.post.currUser === this.props.post.post.poster_id) {
         deleteButton = (
@@ -35,11 +33,35 @@ class PostShow extends React.Component {
           </button>
         );
       };
+
+    let comments;
+    comments = this.props.post.comments.map((comment, idx) => {
+      if (comment) {
+        return (
+          <li key={idx}>
+            <div className="post-comment">
+              <div className="post-comment-username">
+                <Link className="no-underline" to={`/users/${comment.userId}`}>
+                  {comment.username}
+                </Link> &nbsp;
+             <a className="post-comment-body">
+                  {comment.body}
+                </a>
+              </div>
+            </div>
+          </li>
+        );
+      }
+    });
+
     return(
       <div className="post-show">
         <img src={this.props.post.post.imageUrl} />
         <div className="post-show-right">
           {deleteButton}
+        </div>
+        <div>
+          {comments}
         </div>
       </div>
     );

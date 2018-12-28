@@ -35,6 +35,10 @@
   font-size: 14.5px;
 }
 
+.post-modal-comments-header div {
+  font-weight: 400;
+}
+
 .post-modal-all-comments {
     width: 280px;
     margin-top: 40px;

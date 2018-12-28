@@ -45,6 +45,7 @@ class PostShow extends React.Component {
       };
 
     let comments;
+    if (this.props.post.comments) {
     comments = this.props.post.comments.map((comment, idx) => {
       if (comment) {
         return (
@@ -62,20 +63,31 @@ class PostShow extends React.Component {
           </li>
         );
       }
-    });
+    })
+  };
+
+    if (comments) {
+      comments.reverse();
+    }
 
     return(
+      
       <div className="post-show">
         <img src={this.props.post.post.imageUrl} />
-        <div className="post-show-right">
-          {deleteButton}
-        </div>
+        
         <div className="post-modal-comments">
+          <div className="post-show-right">
+            {deleteButton}
+          </div>
+          
           <div className="post-modal-comments-header">
             {this.props.post.post.poster_username}
+            <div>
+              {this.props.post.post.description}
+            </div>
           </div>
           <div className="post-modal-all-comments">
-            {comments.reverse()}
+            {comments}
           </div>
         </div>
       </div>

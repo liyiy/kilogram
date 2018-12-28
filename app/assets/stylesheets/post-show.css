@@ -27,10 +27,18 @@
   background-color: white;
 }
 
+.post-modal-comments-header {
+  margin-left: 60px;
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  font-size: 14.5px;
+}
+
 .post-modal-all-comments {
     width: 280px;
-    margin-top: 60px;
-    padding-top: 15px;
+    margin-top: 40px;
+    padding-top: 20px;
     margin-left: 27px;
     border-top: 1px solid #efefef;
 }

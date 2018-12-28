@@ -12,7 +12,6 @@ export const receiveComments = comments => {
 };
 
 export const receiveComment = comment => {
-
   return {
     type: RECEIVE_COMMENT,
     comment

@@ -24,7 +24,7 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => {
   return {
     fetchPosts: () => dispatch(fetchPosts()),
-    openPost: (modal, post, currUserId) => dispatch(openPost(modal, post, currUserId))
+    openPost: (modal, post, postComments, currUserId) => dispatch(openPost(modal, post, postComments, currUserId))
   };
 };
 

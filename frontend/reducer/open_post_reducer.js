@@ -1,4 +1,6 @@
+// import { merge } from 'lodash;
 import { OPEN_POST } from '../actions/modal_actions';
+// import { RECEIVE_COMMENT } from '../actions/comment_actions';
 
 const openPostReducer = (state, action) => {
   switch(action.type) {

@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 
 const msp = (state, ownProps) => {
+
   const comments = Object.values(state.entities.comments).map(comment => {
     if (comment.post_id === ownProps.postId) {
-      return ({userId: comment.user_id, body: comment.body, id: comment.id});
+      return ({userId: comment.user_id, body: comment.body, id: comment.id, username: comment.username});
     }
   });
   const users = state.entities.users;
-
   return {
     comments: comments,
     users: users
@@ -28,11 +28,11 @@ class PostComments extends React.Component {
     let comments;
      comments = this.props.comments.map((comment,idx) => {
       if (comment) {
-      return (
+       return (
         <li key={idx}>
           <div className="post-comment">
             <div className="post-comment-username">
-              <Link className="no-underline" to={`/users/${this.props.users[comment.userId].id}`}>
+              <Link className="no-underline" to={`/users/${comment.userId}`}>
                 {this.props.users[comment.userId].username}
               </Link> &nbsp;
              <a className="post-comment-body">

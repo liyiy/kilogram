@@ -3,7 +3,18 @@ import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { deletePost } from '../../actions/post_actions';
 import { closeModal } from '../../actions/modal_actions';
+// import CommentForm from '../comments/comment_form';
 
+// const msp = (state) => {
+//   debugger 
+//   let currUser;
+//   if (state.ui.post.currUser) {
+//     currUser = state.ui.post.currUser;
+//   }
+//   return {
+//     currUser: currUser
+//   };
+// };
 const mdp = (dispatch) => {
   return {
     deletePost: (id) => dispatch(deletePost(id))
@@ -24,7 +35,6 @@ class PostShow extends React.Component {
   }
 
   render() {
-    
     let deleteButton;
       if (this.props.post.currUser === this.props.post.post.poster_id) {
         deleteButton = (
@@ -60,8 +70,13 @@ class PostShow extends React.Component {
         <div className="post-show-right">
           {deleteButton}
         </div>
-        <div>
-          {comments}
+        <div className="post-modal-comments">
+          <div className="post-modal-comments-header">
+            {this.props.post.post.poster_username}
+          </div>
+          <div className="post-modal-all-comments">
+            {comments.reverse()}
+          </div>
         </div>
       </div>
     );

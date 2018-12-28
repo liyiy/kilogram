@@ -5,6 +5,7 @@
       json.imageUrl url_for(post.photo)
     end
     json.numLikes post.likes.count
+    json.poster_username post.user.username
     json.comments post.comments.each do |comment|
       json.id comment.id 
       json.body comment.body 
@@ -17,8 +18,3 @@
 end
 
 
-# json.array! @posts do |post|
-#   json.set! post.id
-#   json.extract! post, :id, :description, :photo
-#   json.imageUrl url_for(post.photo)
-# end

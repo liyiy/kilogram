@@ -1,4 +1,6 @@
 .post-show {
+  display: flex;
+  background-color: white;
 }
 
 .post-show-right {
@@ -16,4 +18,24 @@
   font-weight: 600;
   font-size: 13px;
 
+}
+
+.post-modal-comments {
+  list-style: none;
+  width: 340px;
+  color: black;
+  background-color: white;
+}
+
+.post-modal-all-comments {
+    width: 280px;
+    margin-top: 60px;
+    padding-top: 15px;
+    margin-left: 27px;
+    border-top: 1px solid #efefef;
+}
+
+.post-modal-all-comments li {
+  padding-bottom: 5px;
+  font-size: 14.5px;
 }

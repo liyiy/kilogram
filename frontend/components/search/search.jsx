@@ -27,26 +27,29 @@ class Search extends React.Component {
   handleChange(filter) {
     return e => this.props.updateFilter(filter, e.currentTarget.value)
   }
+  // onBlur = {() => this.props.updateFilter('users', "")}
 
   render() {
     let search;
+    let display = "search-results";
+
     if (this.props.value[0] === "" || this.props.searches.length === 0) {
       search = null;
     } else {
-      search = <UserIndex users={this.props.searches} />
+      search = <UserIndex users={this.props.searches} display={display}/>
     }
+
     return (
       <>
-      <div className="search">
-      <div className="search-bar">
-      <form>
-        <input
-          placeholder="Search"
-          onChange={this.handleChange('users')}
-          onBlur={() => this.props.updateFilter('users', "")}
-        />
-      </form>
-      </div>
+      <div className="search" onBlur={() => display = "hide"}>
+        <div className="search-bar">
+        <form>
+          <input
+            placeholder="Search"
+            onChange={this.handleChange('users')}
+          />
+        </form>
+        </div>
         {search}
       </div>
       </>

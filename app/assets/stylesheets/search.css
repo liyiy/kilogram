@@ -1,4 +1,6 @@
 .search {
+  display: flex;
+  flex-direction: column;
   z-index: 10;
   /* margin-left: 525px; */
 }
@@ -31,7 +33,7 @@
 .search-results {
   list-style: none;
   max-height: 362px;
-  z-index: 10;
+  /* z-index: 10; */
   margin-top: 25px;
   background-color: white;
   border: 1px solid #e6e6e6;
@@ -65,4 +67,8 @@
 
 .search-pic div {
   /* border: 2px solid red; */
+}
+
+.hide {
+  display: none;
 }

@@ -95,6 +95,4 @@ class PostShow extends React.Component {
   }
 }
 
-
-
 export default withRouter(connect(null, mdp)(PostShow));

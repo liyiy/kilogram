@@ -8,11 +8,20 @@ import { Link } from 'react-router-dom';
 
 const PostIndexItem = ({ user, post, userId, currentUserId, username }) => {
   let userpic;
+  let likes;
+
   if (user.imageUrl) {
     userpic = user.imageUrl;
   } else {
     userpic = window.defaultProPic;
   }
+
+  if (post.numLikes === 1) {
+    likes = "like";
+  } else {
+    likes = "likes";
+  }
+
 
     return (
       <li key={post.id} className="post-index-item">
@@ -27,7 +36,7 @@ const PostIndexItem = ({ user, post, userId, currentUserId, username }) => {
               <CreateLike post={post} />
             </div>
             <div className="num-likes">
-              {post.numLikes} likes
+              {post.numLikes} {likes}
             </div>
             <div className="post-bottom-name">
               {username}&nbsp; <a className="post-descrip">{post.description}</a>

@@ -22,11 +22,13 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    
   }
 
   handleChange(filter) {
     return e => this.props.updateFilter(filter, e.currentTarget.value)
   }
+
   // onBlur = {() => this.props.updateFilter('users', "")}
 
   render() {

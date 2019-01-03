@@ -21,15 +21,17 @@ class CommentForm extends React.Component {
 
 
   handleSubmit(e) {
-    e.preventDefault()
-    this.props.createComment(this.state);
-    this.setState({ ["body"]: "" });
+    e.preventDefault();
+    if (this.state["body"] != "") {
+      this.props.createComment(this.state);
+      this.setState({ ["body"]: "" });
+    }
   }
 
   handleEnter(e) {
     if (e.keyCode === 13) {
-      this.handleSubmit(e)
-    };
+      this.handleSubmit(e);
+    }
   }
 
   update(field) {

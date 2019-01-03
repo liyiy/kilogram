@@ -4,7 +4,7 @@ import ProfilePicContainer from '../profile/profile_pic_container';
 
 const UserIndex = ({ users, display }) => {
   return (
-  <div className={display}>
+  <div className="search-results" style={{visibility: display}}>
     {users.map(user => (
       <Link key={user.id} className="no-underline search-pic" to={`/users/${user.id}`}>
         <li key={user.id}>
@@ -13,7 +13,7 @@ const UserIndex = ({ users, display }) => {
 
           <div>{user.username}</div>
         </li>
-     </Link>
+    </Link>
     ))}
   </div>
 );

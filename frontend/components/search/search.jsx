@@ -68,14 +68,12 @@ class Search extends React.Component {
   // onBlur = {() => this.props.updateFilter('users', "")}
 
   render() {
-    console.log(this.state);
     let search;
-    let display = "search-results";
 
     if (this.props.value[0] === "" || this.props.searches.length === 0) {
       search = null;
     } else {
-      search = <div 
+      search = <div className="user-index-div"
       onMouseEnter={this.prepToClick}
       onMouseLeave={this.unprepToClick}>
           <UserIndex users={this.props.searches} display={this.state["display"]} /> 

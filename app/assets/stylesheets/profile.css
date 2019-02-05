@@ -54,6 +54,8 @@
 }
 
 .profile-post-list-img {
+  display:flex;
+  justify-content: center;
   background-color: white;
   max-width: 258px;
   height: 258px;

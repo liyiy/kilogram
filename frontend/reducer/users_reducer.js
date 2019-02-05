@@ -2,6 +2,8 @@ import { merge } from "lodash";
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_USER, RECEIVE_USERS } from '../actions/user_actions';
 import { FOLLOW_USER, UNFOLLOW_USER } from '../actions/follow_actions';
+import { RECEIVE_POST, REMOVE_POST } from '../actions/post_actions';
+
 
 const usersReducer = (state={}, action) => {
   Object.freeze(state);
@@ -28,6 +30,12 @@ const usersReducer = (state={}, action) => {
       newState[action.userId].allFollowers = userArr.filter(id => id != currUser)
       newState[action.currUserId].numFollowings--;
       newState[action.userId].numFollowers--;
+      return newState;
+    case RECEIVE_POST:
+      newState[action.post.post.poster_id].numPosts++;
+      return newState;
+    case REMOVE_POST:
+      newState[action.post.poster_id].numPosts--;
       return newState;
     default:
       return state;

@@ -12,7 +12,7 @@ const postsReducer = (state = {}, action) => {
     case RECEIVE_POST:
       return merge({}, state, {[action.post.post.id]: action.post.post});
     case REMOVE_POST:
-      delete newState[action.postId];
+      delete newState[action.post.id];
       return newState;
     case RECEIVE_LIKE:
       newState[action.like.likeable_id].numLikes++;

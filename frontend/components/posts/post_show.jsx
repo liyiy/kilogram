@@ -6,7 +6,6 @@ import { closeModal } from '../../actions/modal_actions';
 // import CommentForm from '../comments/comment_form';
 
 // const msp = (state) => {
-//   debugger 
 //   let currUser;
 //   if (state.ui.post.currUser) {
 //     currUser = state.ui.post.currUser;
@@ -17,7 +16,7 @@ import { closeModal } from '../../actions/modal_actions';
 // };
 const mdp = (dispatch) => {
   return {
-    deletePost: (id) => dispatch(deletePost(id))
+    deletePost: (post) => dispatch(deletePost(post))
   };
 };
 
@@ -31,7 +30,7 @@ class PostShow extends React.Component {
 
   handleDelete(e) {
     e.preventDefault();
-    this.props.deletePost(this.props.post.post.id).then(dispatch(closeModal()));
+    this.props.deletePost(this.props.post.post).then(dispatch(closeModal()));
   }
 
   render() {

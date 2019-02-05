@@ -19,6 +19,7 @@
 
 .follows-list {
   list-style: none;
+  overflow: scroll;
 }
 
 .follows-list li {
